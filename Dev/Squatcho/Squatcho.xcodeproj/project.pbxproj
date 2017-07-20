@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23430EC4F102D27C19BE1704 /* Pods_Squatcho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */; };
+		A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B880E1F2057AC00484C13 /* SWRevealViewController.m */; };
+		A27B88121F20591F00484C13 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88111F20591F00484C13 /* MenuController.swift */; };
+		A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88131F20593B00484C13 /* HomeTableViewController.swift */; };
+		A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */; };
+		A27B88181F205A3400484C13 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88171F205A3400484C13 /* MapViewController.swift */; };
+		A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88191F205BBA00484C13 /* DetailsViewController.swift */; };
+		A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B881B1F205BF400484C13 /* AccountViewController.swift */; };
+		A27B881E1F205BF400484C13 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27B881C1F205BF400484C13 /* AccountViewController.xib */; };
+		A27B88211F2130CA00484C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88201F2130CA00484C13 /* User.swift */; };
+		A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */; };
+		A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF421F20553300BD97D4 /* Main.storyboard */; };
+		A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF451F20553300BD97D4 /* Assets.xcassets */; };
+		A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.release.xcconfig"; sourceTree = "<group>"; };
+		8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squatcho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.debug.xcconfig"; sourceTree = "<group>"; };
+		A27B880C1F20572D00484C13 /* Squatcho-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Squatcho-Bridging-Header.h"; sourceTree = "<group>"; };
+		A27B880D1F2057AC00484C13 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A27B880E1F2057AC00484C13 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A27B88111F20591F00484C13 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		A27B88131F20593B00484C13 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamTableViewController.swift; sourceTree = "<group>"; };
+		A27B88171F205A3400484C13 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A27B88191F205BBA00484C13 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A27B881B1F205BF400484C13 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A27B881C1F205BF400484C13 /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		A27B88201F2130CA00484C13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A28EDF3B1F20553300BD97D4 /* Squatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A28EDF431F20553300BD97D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A28EDF451F20553300BD97D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A28EDF481F20553300BD97D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A28EDF4A1F20553300BD97D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A28EDF381F20553300BD97D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23430EC4F102D27C19BE1704 /* Pods_Squatcho.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3838DCF6BECFC2F3696D5D17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A27B88101F2057BC00484C13 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A27B880C1F20572D00484C13 /* Squatcho-Bridging-Header.h */,
+				A27B880D1F2057AC00484C13 /* SWRevealViewController.h */,
+				A27B880E1F2057AC00484C13 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		A27B881F1F205BFC00484C13 /* Menu Items */ = {
+			isa = PBXGroup;
+			children = (
+				A27B88131F20593B00484C13 /* HomeTableViewController.swift */,
+				A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */,
+				A27B88171F205A3400484C13 /* MapViewController.swift */,
+				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
+				A27B881B1F205BF400484C13 /* AccountViewController.swift */,
+				A27B881C1F205BF400484C13 /* AccountViewController.xib */,
+			);
+			name = "Menu Items";
+			sourceTree = "<group>";
+		};
+		A27B88221F21351800484C13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A27B88201F2130CA00484C13 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A28EDF321F20553300BD97D4 = {
+			isa = PBXGroup;
+			children = (
+				A28EDF3D1F20553300BD97D4 /* Squatcho */,
+				A28EDF3C1F20553300BD97D4 /* Products */,
+				F1EAC81C9DC45837BDAD3D04 /* Pods */,
+				3838DCF6BECFC2F3696D5D17 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A28EDF3C1F20553300BD97D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A28EDF3B1F20553300BD97D4 /* Squatcho.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A28EDF3D1F20553300BD97D4 /* Squatcho */ = {
+			isa = PBXGroup;
+			children = (
+				A27B88221F21351800484C13 /* Model */,
+				A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */,
+				A27B88111F20591F00484C13 /* MenuController.swift */,
+				A27B881F1F205BFC00484C13 /* Menu Items */,
+				A28EDF421F20553300BD97D4 /* Main.storyboard */,
+				A28EDF451F20553300BD97D4 /* Assets.xcassets */,
+				A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */,
+				A28EDF4A1F20553300BD97D4 /* Info.plist */,
+				A27B88101F2057BC00484C13 /* SWRevealViewController */,
+			);
+			path = Squatcho;
+			sourceTree = "<group>";
+		};
+		F1EAC81C9DC45837BDAD3D04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */,
+				72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A28EDF3A1F20553300BD97D4 /* Squatcho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A28EDF4D1F20553300BD97D4 /* Build configuration list for PBXNativeTarget "Squatcho" */;
+			buildPhases = (
+				D0EF575F9ACCCBE0A0B1FED5 /* [CP] Check Pods Manifest.lock */,
+				A28EDF371F20553300BD97D4 /* Sources */,
+				A28EDF381F20553300BD97D4 /* Frameworks */,
+				A28EDF391F20553300BD97D4 /* Resources */,
+				62380D2253693C9C0893DA9B /* [CP] Embed Pods Frameworks */,
+				AB1D0D334E161F252D0C1E15 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Squatcho;
+			productName = Squatcho;
+			productReference = A28EDF3B1F20553300BD97D4 /* Squatcho.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A28EDF331F20553300BD97D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Marlexa;
+				TargetAttributes = {
+					A28EDF3A1F20553300BD97D4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = CZLU3AZUPD;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A28EDF361F20553300BD97D4 /* Build configuration list for PBXProject "Squatcho" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A28EDF321F20553300BD97D4;
+			productRefGroup = A28EDF3C1F20553300BD97D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A28EDF3A1F20553300BD97D4 /* Squatcho */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A28EDF391F20553300BD97D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */,
+				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
+				A27B881E1F205BF400484C13 /* AccountViewController.xib in Resources */,
+				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62380D2253693C9C0893DA9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1D0D334E161F252D0C1E15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0EF575F9ACCCBE0A0B1FED5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A28EDF371F20553300BD97D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
+				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
+				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,
+				A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */,
+				A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */,
+				A27B88211F2130CA00484C13 /* User.swift in Sources */,
+				A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */,
+				A27B88181F205A3400484C13 /* MapViewController.swift in Sources */,
+				A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A28EDF421F20553300BD97D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A28EDF431F20553300BD97D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A28EDF481F20553300BD97D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A28EDF4B1F20553300BD97D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A28EDF4C1F20553300BD97D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A28EDF4E1F20553300BD97D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = CZLU3AZUPD;
+				INFOPLIST_FILE = Squatcho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marlexa.Squatcho;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Squatcho/Squatcho-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A28EDF4F1F20553300BD97D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = CZLU3AZUPD;
+				INFOPLIST_FILE = Squatcho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marlexa.Squatcho;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Squatcho/Squatcho-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A28EDF361F20553300BD97D4 /* Build configuration list for PBXProject "Squatcho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A28EDF4B1F20553300BD97D4 /* Debug */,
+				A28EDF4C1F20553300BD97D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A28EDF4D1F20553300BD97D4 /* Build configuration list for PBXNativeTarget "Squatcho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A28EDF4E1F20553300BD97D4 /* Debug */,
+				A28EDF4F1F20553300BD97D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A28EDF331F20553300BD97D4 /* Project object */;
+}
