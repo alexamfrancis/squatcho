@@ -19,7 +19,7 @@ struct Menu {
 
 class MenuController: UITableViewController {
     var menuItems = Menu()
-    let images = ["home", "team", "map2", "details", "account"]
+    var width = CGFloat(45.0), height = CGFloat(45.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +33,18 @@ class MenuController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.visibleCells.map{$0.imageView?.image = $0.imageView?.image?.maskWithColor(color: UIColor.sqUnselected) }
         updateView()
     }
     
     func updateView() {
         let selectedItem = menuItems.items.filter{$0.selected}[0]
-        print("selected item is \(selectedItem.text)")
         let selectedCell = tableView.visibleCells.filter{$0.textLabel?.text == selectedItem.text}[0]
         selectedCell.textLabel?.textColor = UIColor.sqSelected
         selectedCell.textLabel?.font = UIFont.systemFont(ofSize: (selectedCell.textLabel?.font.pointSize)!, weight: UIFontWeightBold)
-        //selectedCell.imageView?.image = selectedCell.imageView?.image?.maskWithColor(color: UIColor.sqSelected)
+        selectedCell.imageView?.image = (selectedCell.imageView?.image?.withRenderingMode(.alwaysTemplate))!
+        selectedCell.imageView?.tintColor = UIColor.sqSelected
+        selectedCell.imageView?.frame = CGRect(origin: CGPoint(x: 14, y: 2), size: CGSize(width: (width * 0.8), height: (height * 0.8)))
+//        selectedCell.imageView?.frame.size = CGSize(width: (width * 0.8), height: (height * 0.8))
 
         let unselectedItems = menuItems.items.filter{!$0.selected}
         let _ = tableView.visibleCells.map {
@@ -51,7 +52,10 @@ class MenuController: UITableViewController {
                 if item.text == $0.textLabel?.text {
                     $0.textLabel?.textColor = UIColor.sqUnselected
                     $0.textLabel?.font = UIFont.systemFont(ofSize: ($0.textLabel?.font.pointSize)!, weight: UIFontWeightRegular)
-                    //$0.imageView?.image = $0.imageView?.image?.maskWithColor(color: UIColor.sqUnselected)
+                    $0.imageView?.image = ($0.imageView?.image?.withRenderingMode(.alwaysTemplate))!
+                    $0.imageView?.tintColor = UIColor.sqUnselected
+                    $0.imageView?.frame = CGRect(origin: CGPoint(x: 17, y: 6), size: CGSize(width: (width * 0.6), height: (height * 0.6)))
+//                    $0.imageView?.frame.size = CGSize(width: (width * 0.5), height: (height * 0.5))
                 }
             }
         }

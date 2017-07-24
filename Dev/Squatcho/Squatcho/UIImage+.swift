@@ -31,4 +31,18 @@ extension UIImage {
             return nil
         }
     }
+    /*
+    func tintImage(tint: UIColor) {
+        guard let tinted = self.copy() as? UIImage else { return }
+        tinted.lockFocus()
+        tint.set()
+        
+        let imageRect = CGRect(origin: UIZeroPoint, size: self.size)
+        UIRectFillUsingBlendMode(imageRect, .sourceAtop)
+        
+        tinted.unlockFocus()
+        
+        self.image! = tinted
+    }
+    */
 }
