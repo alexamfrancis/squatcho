@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController, UIImagePickerControllerDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet weak var locationTitleBar: UINavigationItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,7 @@ class HomeTableViewController: UITableViewController {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            locationTitleBar.title = DummyData.sloCity
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,6 +45,15 @@ class HomeTableViewController: UITableViewController {
         return 0
     }
 
+//    func openCameraButton(sender: AnyObject) {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+//            var imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+//            imagePicker.allowsEditing = false
+//            self.present(imagePicker, animated: true, completion: nil)
+//        }
+//    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -97,5 +108,7 @@ class HomeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }

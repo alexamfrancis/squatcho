@@ -9,10 +9,12 @@
 import UIKit
 
 class MenuController: UITableViewController {
-
+    let menuItems = ["Squatcho", "Home", "My Team", "Map", "Details", "Account"]
+    let images = ["home", "team", "map2", "details", "account"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.sqGreen
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,27 +28,45 @@ class MenuController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return menuItems.count
     }
-    */
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel?.textColor = UIColor(white: 1.0, alpha: 0.5)
+        cell.backgroundColor = UIColor.clear
     }
-    */
-
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.cellForRow(at: indexPath)!
+//        //let cell = tableView.dequeueReusableCell(withIdentifier: "cellMenuItemIdentifier\(indexPath.row)")! //1.
+//        cell.textLabel?.textColor = UIColor(white: 1.0, alpha: 0.5)
+//        //cell.textLabel?.highlightedTextColor = UIColor.white
+//        
+//        cell.backgroundColor = UIColor.sqGreen
+//        return cell //4.
+//    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let label = tableView.cellForRow(at: indexPath)?.textLabel {
+            label.textColor = UIColor.white
+            label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let label = tableView.cellForRow(at: indexPath)?.textLabel {
+            label.textColor = UIColor(white: 1.0, alpha: 0.5)
+            label.font = UIFont.systemFont(ofSize: label.font.pointSize)
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

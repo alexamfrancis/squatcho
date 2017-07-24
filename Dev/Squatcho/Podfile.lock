@@ -1,4 +1,5 @@
 PODS:
+  - Bolts/Tasks (1.8.4)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
   - GoogleMaps/Base (2.2.0)
@@ -6,18 +7,23 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
+  - Parse (1.14.4):
+    - Bolts/Tasks (~> 1.8)
   - Simplicity (2.0.1)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - Parse
   - Simplicity
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   Simplicity: 58ce0c6569baf45e48ccd25432274ae899097517
 
-PODFILE CHECKSUM: 23ec4ec32a5ac4189ce7b6e9788493f4dbdb3f37
+PODFILE CHECKSUM: a08d7b588552cfefe6d2f457374e8f38a55695ea
 
 COCOAPODS: 1.2.0

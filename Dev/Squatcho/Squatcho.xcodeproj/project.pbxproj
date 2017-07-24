@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		23430EC4F102D27C19BE1704 /* Pods_Squatcho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */; };
+		A267076E1F215C520017F859 /* Riddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076D1F215C520017F859 /* Riddle.swift */; };
+		A26707701F216CDB0017F859 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076F1F216CDB0017F859 /* Event.swift */; };
+		A26707721F2179630017F859 /* NSColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26707711F2179630017F859 /* NSColor+.swift */; };
 		A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B880E1F2057AC00484C13 /* SWRevealViewController.m */; };
 		A27B88121F20591F00484C13 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88111F20591F00484C13 /* MenuController.swift */; };
 		A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88131F20593B00484C13 /* HomeTableViewController.swift */; };
@@ -15,8 +18,9 @@
 		A27B88181F205A3400484C13 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88171F205A3400484C13 /* MapViewController.swift */; };
 		A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88191F205BBA00484C13 /* DetailsViewController.swift */; };
 		A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B881B1F205BF400484C13 /* AccountViewController.swift */; };
-		A27B881E1F205BF400484C13 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27B881C1F205BF400484C13 /* AccountViewController.xib */; };
 		A27B88211F2130CA00484C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88201F2130CA00484C13 /* User.swift */; };
+		A27B88241F21522400484C13 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88231F21522400484C13 /* Team.swift */; };
+		A2850FBE1F25549800E84152 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2850FBD1F25549800E84152 /* DummyData.swift */; };
 		A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */; };
 		A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF421F20553300BD97D4 /* Main.storyboard */; };
 		A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF451F20553300BD97D4 /* Assets.xcassets */; };
@@ -27,6 +31,9 @@
 		72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.release.xcconfig"; sourceTree = "<group>"; };
 		8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squatcho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.debug.xcconfig"; sourceTree = "<group>"; };
+		A267076D1F215C520017F859 /* Riddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riddle.swift; sourceTree = "<group>"; };
+		A267076F1F216CDB0017F859 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A26707711F2179630017F859 /* NSColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+.swift"; sourceTree = "<group>"; };
 		A27B880C1F20572D00484C13 /* Squatcho-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Squatcho-Bridging-Header.h"; sourceTree = "<group>"; };
 		A27B880D1F2057AC00484C13 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A27B880E1F2057AC00484C13 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -36,8 +43,9 @@
 		A27B88171F205A3400484C13 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A27B88191F205BBA00484C13 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A27B881B1F205BF400484C13 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		A27B881C1F205BF400484C13 /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		A27B88201F2130CA00484C13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A27B88231F21522400484C13 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A2850FBD1F25549800E84152 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		A28EDF3B1F20553300BD97D4 /* Squatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28EDF431F20553300BD97D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,7 +92,6 @@
 				A27B88171F205A3400484C13 /* MapViewController.swift */,
 				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
 				A27B881B1F205BF400484C13 /* AccountViewController.swift */,
-				A27B881C1F205BF400484C13 /* AccountViewController.xib */,
 			);
 			name = "Menu Items";
 			sourceTree = "<group>";
@@ -93,6 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				A27B88201F2130CA00484C13 /* User.swift */,
+				A27B88231F21522400484C13 /* Team.swift */,
+				A267076D1F215C520017F859 /* Riddle.swift */,
+				A267076F1F216CDB0017F859 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -118,10 +128,12 @@
 		A28EDF3D1F20553300BD97D4 /* Squatcho */ = {
 			isa = PBXGroup;
 			children = (
-				A27B88221F21351800484C13 /* Model */,
+				A2850FBD1F25549800E84152 /* DummyData.swift */,
 				A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */,
 				A27B88111F20591F00484C13 /* MenuController.swift */,
 				A27B881F1F205BFC00484C13 /* Menu Items */,
+				A27B88221F21351800484C13 /* Model */,
+				A26707711F2179630017F859 /* NSColor+.swift */,
 				A28EDF421F20553300BD97D4 /* Main.storyboard */,
 				A28EDF451F20553300BD97D4 /* Assets.xcassets */,
 				A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */,
@@ -206,7 +218,6 @@
 			files = (
 				A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */,
 				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
-				A27B881E1F205BF400484C13 /* AccountViewController.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +281,15 @@
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
 				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,
 				A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */,
+				A2850FBE1F25549800E84152 /* DummyData.swift in Sources */,
+				A26707701F216CDB0017F859 /* Event.swift in Sources */,
+				A267076E1F215C520017F859 /* Riddle.swift in Sources */,
 				A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */,
 				A27B88211F2130CA00484C13 /* User.swift in Sources */,
 				A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */,
 				A27B88181F205A3400484C13 /* MapViewController.swift in Sources */,
+				A26707721F2179630017F859 /* NSColor+.swift in Sources */,
+				A27B88241F21522400484C13 /* Team.swift in Sources */,
 				A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

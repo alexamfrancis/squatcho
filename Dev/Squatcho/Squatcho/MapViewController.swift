@@ -8,9 +8,11 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,16 @@ class MapViewController: UIViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // Ask for Authorization from the User.
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -26,19 +38,33 @@ class MapViewController: UIViewController {
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 35.28710571680812, longitude: -120.66387176513672, zoom: 12.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.isMyLocationEnabled = true
         view = mapView
+
+        // Create a rectangular path
+        let bounds = GMSMutablePath()
+        for coord in DummyData.sloCoords {
+            let lat = coord[0]
+            let long = coord[1]
+            bounds.add(CLLocationCoordinate2D(latitude: lat, longitude: long))
+        }
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        // Create the polygon, and assign it to the map.
+        let polygon = GMSPolygon(path: bounds)
+        polygon.fillColor = UIColor(red: 0.25, green: 0, blue: 0, alpha: 0.05);
+        polygon.strokeColor = .black
+        polygon.strokeWidth = 2
+        polygon.map = mapView
     }
 
-
+    /* GET THE USERS CURRENT LOCATION */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        // do something with the updated location
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

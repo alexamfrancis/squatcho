@@ -16,10 +16,10 @@ enum UserStatus {
     case null
 }
 
-class User: Codable {
+class User {
     var emailAddress: String
     var phoneString: String
-    var phoneNumber: PhoneNumber
+    //var phoneNumber: PhoneNumber
     var firstName: String
     var lastName: String
     var userStatus: UserStatus
@@ -32,13 +32,17 @@ class User: Codable {
         firstName = first
         lastName = last
         userStatus = .null
-        
+        currentLocation = CLLocationCoordinate2D()
         // get the current date and time
         signUpDate = Date()
     }
     
     func changeStatus(to new:UserStatus) {
         userStatus = new
+    }
+    
+    func updateCurrentLocation(lat:CLLocationDegrees, long:CLLocationDegrees) {
+        currentLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
     
     func getSignUpDate() -> String {
@@ -49,6 +53,7 @@ class User: Codable {
         
         // get the date time String from the date object
         let dateString = formatter.string(from: signUpDate) // October 8, 2016 at 10:48:53 PM
+        return dateString
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -82,7 +87,7 @@ class User: Codable {
         }
     }
     
-    func format(phoneNumber sourcePhoneNumber: String) -> String? {
+    func format(phoneNumber sourcePhoneNumber: String) -> PhoneNumber? {
         
         // Remove any character that is not a number
         let numbersOnly = sourcePhoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
@@ -128,8 +133,8 @@ class User: Codable {
             return nil
         }
         let phoneNum = PhoneNumber(country: leadingOne, area: areaCode, first3: prefix, last4: suffix)
-        // return phoneNum
-        return leadingOne + areaCode + prefix + "-" + suffix
+        return phoneNum
+        // return leadingOne + areaCode + prefix + "-" + suffix
     }
 
 }
@@ -150,19 +155,19 @@ extension String.CharacterView {
 }
 
 struct PhoneNumber {
-    var countryCode: Int
+    var countryCode: String
     var areaCode: String
     var firstThree: String
     var lastFour: String
     
-    init(country:Int, area:String, first3:String, last4:String) {
+    init(country:String, area:String, first3:String, last4:String) {
         countryCode = country
         areaCode = area
         firstThree = first3
         lastFour = last4
     }
     
-    func toString() {
-        return "+\(countryCode) (\(areaCde)) \(firstThree)-\(lastFour)"
+    func toString() -> String {
+        return "+\(countryCode) (\(areaCode)) \(firstThree)-\(lastFour)"
     }
 }
