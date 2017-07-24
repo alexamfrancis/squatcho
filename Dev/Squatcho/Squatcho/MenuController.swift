@@ -8,18 +8,53 @@
 
 import UIKit
 
+struct MenuItem {
+    var selected: Bool
+    var text: String
+}
+
+struct Menu {
+    var items = [MenuItem(selected: false, text: ""), MenuItem(selected: true, text: "Home"), MenuItem(selected: false, text: "Team"), MenuItem(selected: false, text: "Map"), MenuItem(selected: false, text: "Details"), MenuItem(selected: false, text: "Account")]
+}
+
 class MenuController: UITableViewController {
-    let menuItems = ["Squatcho", "Home", "My Team", "Map", "Details", "Account"]
+    var menuItems = Menu()
     let images = ["home", "team", "map2", "details", "account"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.sqGreen
+        print("LOADING NEW MENU \(menuItems)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.visibleCells.map{$0.imageView?.image = $0.imageView?.image?.maskWithColor(color: UIColor.sqUnselected) }
+        updateView()
+    }
+    
+    func updateView() {
+        let selectedItem = menuItems.items.filter{$0.selected}[0]
+        print("selected item is \(selectedItem.text)")
+        let selectedCell = tableView.visibleCells.filter{$0.textLabel?.text == selectedItem.text}[0]
+        selectedCell.textLabel?.textColor = UIColor.sqSelected
+        selectedCell.textLabel?.font = UIFont.systemFont(ofSize: (selectedCell.textLabel?.font.pointSize)!, weight: UIFontWeightBold)
+        //selectedCell.imageView?.image = selectedCell.imageView?.image?.maskWithColor(color: UIColor.sqSelected)
+
+        let unselectedItems = menuItems.items.filter{!$0.selected}
+        let _ = tableView.visibleCells.map {
+            for item in unselectedItems {
+                if item.text == $0.textLabel?.text {
+                    $0.textLabel?.textColor = UIColor.sqUnselected
+                    $0.textLabel?.font = UIFont.systemFont(ofSize: ($0.textLabel?.font.pointSize)!, weight: UIFontWeightRegular)
+                    //$0.imageView?.image = $0.imageView?.image?.maskWithColor(color: UIColor.sqUnselected)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,34 +71,23 @@ class MenuController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return menuItems.count
+        return menuItems.items.count
     }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.textColor = UIColor(white: 1.0, alpha: 0.5)
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.sqGreen
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.cellForRow(at: indexPath)!
-//        //let cell = tableView.dequeueReusableCell(withIdentifier: "cellMenuItemIdentifier\(indexPath.row)")! //1.
-//        cell.textLabel?.textColor = UIColor(white: 1.0, alpha: 0.5)
-//        //cell.textLabel?.highlightedTextColor = UIColor.white
-//        
-//        cell.backgroundColor = UIColor.sqGreen
-//        return cell //4.
-//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let label = tableView.cellForRow(at: indexPath)?.textLabel {
-            label.textColor = UIColor.white
-            label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let label = tableView.cellForRow(at: indexPath)?.textLabel {
-            label.textColor = UIColor(white: 1.0, alpha: 0.5)
-            label.font = UIFont.systemFont(ofSize: label.font.pointSize)
+        if let cell = tableView.cellForRow(at: indexPath) {
+            for i in 0...menuItems.items.count-1 {
+                if menuItems.items[i].selected {
+                    menuItems.items[i].selected = false
+                }
+                if menuItems.items[i].text == cell.textLabel?.text {
+                    menuItems.items[i].selected = true
+                }
+            }
+            updateView()
         }
     }
     

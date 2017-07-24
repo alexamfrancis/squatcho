@@ -44,17 +44,17 @@
                         <sections>
                             <tableViewSection id="UGL-Yb-Bvi">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="675-Ow-DGa" style="IBUITableViewCellStyleDefault" id="Rlp-J5-NbV">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="675-Ow-DGa" rowHeight="35" style="IBUITableViewCellStyleDefault" id="Rlp-J5-NbV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rlp-J5-NbV" id="2nL-p4-qQK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Squatcho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="675-Ow-DGa">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="675-Ow-DGa">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -62,8 +62,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.92620444300000004" green="0.93612229820000004" blue="0.94110381600000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier1" textLabel="Ryz-JL-5p0" imageView="23l-tw-fyO" style="IBUITableViewCellStyleDefault" id="Z05-84-3UG">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier1" textLabel="Ryz-JL-5p0" imageView="23l-tw-fyO" style="IBUITableViewCellStyleDefault" id="Z05-84-3UG">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z05-84-3UG" id="QCb-UQ-Iea">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -88,8 +88,8 @@
                                             <segue destination="wtD-6F-GY5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="2Zb-1F-cDe"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier2" textLabel="hLR-XG-oWD" imageView="Udl-Gh-HcW" style="IBUITableViewCellStyleDefault" id="Dp0-DA-fFP">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier2" textLabel="hLR-XG-oWD" imageView="Udl-Gh-HcW" style="IBUITableViewCellStyleDefault" id="Dp0-DA-fFP">
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dp0-DA-fFP" id="8c6-Lr-oUe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -113,8 +113,8 @@
                                             <segue destination="Ite-DJ-AWZ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="q6k-uV-S7w"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier3" textLabel="MyQ-V1-Idf" imageView="3yx-Pf-ord" style="IBUITableViewCellStyleDefault" id="r1m-vF-4AL">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier3" textLabel="MyQ-V1-Idf" imageView="3yx-Pf-ord" style="IBUITableViewCellStyleDefault" id="r1m-vF-4AL">
+                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r1m-vF-4AL" id="ci5-tC-9Af">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -138,8 +138,8 @@
                                             <segue destination="3Ul-dt-p7T" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="BXO-Zz-yIw"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier4" textLabel="NvE-M0-k6F" imageView="SkQ-CF-CgT" style="IBUITableViewCellStyleDefault" id="b7j-Ck-auG">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier4" textLabel="NvE-M0-k6F" imageView="SkQ-CF-CgT" style="IBUITableViewCellStyleDefault" id="b7j-Ck-auG">
+                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b7j-Ck-auG" id="Zof-uC-5fr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -163,8 +163,8 @@
                                             <segue destination="TGG-MN-yf9" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="aNm-Sm-PKf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier5" textLabel="6Iq-oT-1Ec" imageView="pAS-dT-HBk" style="IBUITableViewCellStyleDefault" id="McF-1c-1Cg">
-                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier5" textLabel="6Iq-oT-1Ec" imageView="pAS-dT-HBk" style="IBUITableViewCellStyleDefault" id="McF-1c-1Cg">
+                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="McF-1c-1Cg" id="jdU-sj-UBz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -199,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Teh-Bs-NQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="475"/>
+            <point key="canvasLocation" x="-367.19999999999999" y="474.51274362818594"/>
         </scene>
         <!--Location-->
         <scene sceneID="QUm-A1-L0w">

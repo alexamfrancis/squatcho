@@ -25,6 +25,7 @@
 		A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF421F20553300BD97D4 /* Main.storyboard */; };
 		A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF451F20553300BD97D4 /* Assets.xcassets */; };
 		A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */; };
+		A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD4D811F259CC900F3D41F /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A28EDF451F20553300BD97D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28EDF481F20553300BD97D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A28EDF4A1F20553300BD97D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2BD4D811F259CC900F3D41F /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				A27B881F1F205BFC00484C13 /* Menu Items */,
 				A27B88221F21351800484C13 /* Model */,
 				A26707711F2179630017F859 /* NSColor+.swift */,
+				A2BD4D811F259CC900F3D41F /* UIImage+.swift */,
 				A28EDF421F20553300BD97D4 /* Main.storyboard */,
 				A28EDF451F20553300BD97D4 /* Assets.xcassets */,
 				A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 				A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */,
 				A27B88181F205A3400484C13 /* MapViewController.swift in Sources */,
 				A26707721F2179630017F859 /* NSColor+.swift in Sources */,
+				A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */,
 				A27B88241F21522400484C13 /* Team.swift in Sources */,
 				A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */,
 			);
