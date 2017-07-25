@@ -216,6 +216,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-zV-jFD">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.60392159219999997" green="0.81960785390000002" blue="0.38039216399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="a4W-h1-HNw" kind="embed" id="3XK-Sk-315"/>
                                 </connections>
@@ -276,7 +277,7 @@
         <scene sceneID="Qhs-GE-Zw3">
             <objects>
                 <navigationController id="3Ul-dt-p7T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u8Q-tv-5Nn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8Q-tv-5Nn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -318,7 +319,7 @@
         <scene sceneID="FfU-Yn-Npb">
             <objects>
                 <navigationController id="Ite-DJ-AWZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qGe-RL-pFq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qGe-RL-pFq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -334,7 +335,7 @@
         <scene sceneID="kjt-Fy-FdD">
             <objects>
                 <navigationController id="wtD-6F-GY5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q1n-xg-p7k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q1n-xg-p7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -350,7 +351,7 @@
         <scene sceneID="jFs-Ob-kZ7">
             <objects>
                 <navigationController id="TGG-MN-yf9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6WO-Qj-XSG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6WO-Qj-XSG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -392,7 +393,7 @@
         <scene sceneID="f1G-iu-PbH">
             <objects>
                 <navigationController id="Kxb-g0-AB3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ban-oh-VBQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ban-oh-VBQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

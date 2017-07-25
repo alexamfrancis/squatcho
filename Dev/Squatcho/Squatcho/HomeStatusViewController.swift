@@ -32,7 +32,7 @@ class HomeStatusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //view.backgroundColor = UIColor.sqGreenLight
         //view.layer.backgroundColor = UIColor.lightGray as! CGColor
 
         // Do any additional setup after loading the view.
