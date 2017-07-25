@@ -9,5 +9,5 @@
 import Foundation
 
 public struct Constants {
-    static let homeNullViewIdentifier = "HomeNullView"
+    static let homeNullViewIdentifier = "HomeStatusViewController"
 }
