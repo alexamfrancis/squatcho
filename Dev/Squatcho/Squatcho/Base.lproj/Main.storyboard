@@ -229,6 +229,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="zHk-zV-jFD" id="Bxn-78-2Xe"/>
                         <outlet property="locationTitleBar" destination="UFp-J8-7dw" id="1Ny-WE-V5p"/>
                         <outlet property="menuButton" destination="F2t-mg-qPj" id="xV2-QV-Zdm"/>
                     </connections>
@@ -275,7 +276,7 @@
         <scene sceneID="Qhs-GE-Zw3">
             <objects>
                 <navigationController id="3Ul-dt-p7T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8Q-tv-5Nn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u8Q-tv-5Nn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -317,7 +318,7 @@
         <scene sceneID="FfU-Yn-Npb">
             <objects>
                 <navigationController id="Ite-DJ-AWZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qGe-RL-pFq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qGe-RL-pFq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -333,7 +334,7 @@
         <scene sceneID="kjt-Fy-FdD">
             <objects>
                 <navigationController id="wtD-6F-GY5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q1n-xg-p7k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q1n-xg-p7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -349,7 +350,7 @@
         <scene sceneID="jFs-Ob-kZ7">
             <objects>
                 <navigationController id="TGG-MN-yf9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6WO-Qj-XSG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6WO-Qj-XSG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -391,7 +392,7 @@
         <scene sceneID="f1G-iu-PbH">
             <objects>
                 <navigationController id="Kxb-g0-AB3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ban-oh-VBQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ban-oh-VBQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

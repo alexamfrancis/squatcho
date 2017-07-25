@@ -20,6 +20,9 @@
 		A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B881B1F205BF400484C13 /* AccountViewController.swift */; };
 		A27B88211F2130CA00484C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88201F2130CA00484C13 /* User.swift */; };
 		A27B88241F21522400484C13 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88231F21522400484C13 /* Team.swift */; };
+		A280AA781F26D301009A381F /* HomeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280AA761F26D301009A381F /* HomeStatusViewController.swift */; };
+		A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A280AA771F26D301009A381F /* HomeStatusViewController.xib */; };
+		A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280AA7B1F26D3D6009A381F /* Constants.swift */; };
 		A2850FBE1F25549800E84152 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2850FBD1F25549800E84152 /* DummyData.swift */; };
 		A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */; };
 		A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF421F20553300BD97D4 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		A27B881B1F205BF400484C13 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A27B88201F2130CA00484C13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A27B88231F21522400484C13 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A280AA761F26D301009A381F /* HomeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStatusViewController.swift; sourceTree = "<group>"; };
+		A280AA771F26D301009A381F /* HomeStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeStatusViewController.xib; sourceTree = "<group>"; };
+		A280AA7B1F26D3D6009A381F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A2850FBD1F25549800E84152 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		A28EDF3B1F20553300BD97D4 /* Squatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +95,7 @@
 		A27B881F1F205BFC00484C13 /* Menu Items */ = {
 			isa = PBXGroup;
 			children = (
-				A27B88131F20593B00484C13 /* HomeTableViewController.swift */,
+				A280AA7A1F26D311009A381F /* Home */,
 				A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */,
 				A27B88171F205A3400484C13 /* MapViewController.swift */,
 				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
@@ -107,6 +113,16 @@
 				A267076F1F216CDB0017F859 /* Event.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A280AA7A1F26D311009A381F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A27B88131F20593B00484C13 /* HomeTableViewController.swift */,
+				A280AA761F26D301009A381F /* HomeStatusViewController.swift */,
+				A280AA771F26D301009A381F /* HomeStatusViewController.xib */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		A28EDF321F20553300BD97D4 = {
@@ -137,6 +153,7 @@
 				A27B88221F21351800484C13 /* Model */,
 				A26707711F2179630017F859 /* NSColor+.swift */,
 				A2BD4D811F259CC900F3D41F /* UIImage+.swift */,
+				A280AA7B1F26D3D6009A381F /* Constants.swift */,
 				A28EDF421F20553300BD97D4 /* Main.storyboard */,
 				A28EDF451F20553300BD97D4 /* Assets.xcassets */,
 				A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */,
@@ -221,6 +238,7 @@
 			files = (
 				A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */,
 				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
+				A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
+				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
 				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,
 				A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */,
@@ -290,6 +309,7 @@
 				A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */,
 				A27B88211F2130CA00484C13 /* User.swift in Sources */,
 				A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */,
+				A280AA781F26D301009A381F /* HomeStatusViewController.swift in Sources */,
 				A27B88181F205A3400484C13 /* MapViewController.swift in Sources */,
 				A26707721F2179630017F859 /* NSColor+.swift in Sources */,
 				A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */,

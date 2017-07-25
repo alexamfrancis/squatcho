@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var locationTitleBar: UINavigationItem!
+    @IBOutlet weak var containerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +19,19 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            locationTitleBar.title = DummyData.sloCity
         }
+        
+        // Set up which home view controller to use
+        let viewController = HomeStatusViewController(with: .null)
+        addChildViewController(viewController)
+        viewController.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: containerView.frame.size.height)
+        containerView.addSubview(viewController.view)
+        viewController.didMove(toParentViewController: self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-//        self.revealViewController().toggleAnimationDuration
     }
     
     override func viewDidAppear(_ animated: Bool) {
