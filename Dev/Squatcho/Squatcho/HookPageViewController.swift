@@ -10,8 +10,11 @@ import UIKit
 
 class HookPageViewController: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageOverlay: UILabel!
     @IBOutlet weak var createNewButton: UIButton!
     @IBOutlet weak var joinExistingButton: UIButton!
+    @IBOutlet weak var moreInfoButton: UIButton!
     @IBAction func tappedMoreInfo(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -23,13 +26,22 @@ class HookPageViewController: UIViewController {
 //        _ = navigationController?.popToRootViewController(animated: true)
 //        performSegue(withIdentifier: Constants.showDetailsVCSegueID, sender: nil)
     }
+    @IBAction func tappedCreateNew(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createNewButton.layer.cornerRadius = 10
+        createNewButton.layer.cornerRadius = 8
         createNewButton.clipsToBounds = true
-        joinExistingButton.layer.cornerRadius = 10
+        joinExistingButton.layer.cornerRadius = 8
         joinExistingButton.clipsToBounds = true
+        moreInfoButton.layer.cornerRadius = 8
+        moreInfoButton.clipsToBounds = true
+
+        let screenSize = UIScreen.main.bounds
+        image.frame = screenSize
+        imageOverlay.frame = screenSize
         // Do any additional setup after loading the view.
     }
 

@@ -12,7 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HookPageViewController" customModule="Squatcho" customModuleProvider="target">
             <connections>
                 <outlet property="createNewButton" destination="cNl-qP-Z1f" id="aSq-1h-lop"/>
+                <outlet property="image" destination="TsG-y3-eDR" id="hsq-rs-het"/>
+                <outlet property="imageOverlay" destination="5sn-XQ-xTq" id="ohQ-Jw-zmk"/>
                 <outlet property="joinExistingButton" destination="woY-I8-cfm" id="5Ck-za-vBV"/>
+                <outlet property="moreInfoButton" destination="RLV-Et-Zzw" id="6Oa-bd-GL0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,89 +24,185 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLA-z2-Zsr">
-                    <rect key="frame" x="28" y="313" width="57" height="28"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calpoly-pic" translatesAutoresizingMaskIntoConstraints="NO" id="TsG-y3-eDR">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-dM-tdJ">
-                    <rect key="frame" x="28" y="349" width="319" height="123"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-XQ-xTq">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">1. All team members must be at each riddle location and in the picture.
-2. Teams are limited to 4 members.
-3. Obey all laws on and off the road.
-4. Breach of rules can result in immediate disqualification.</string>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-ma-9cZ">
-                    <rect key="frame" x="38" y="63" width="298" height="188"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">At the start time of the hunt, your first riddle will be revealed. Solve the riddle to find out where to go next. Make it to the correct location to unlock the next riddle. The first team to solve all of the riddles wins $10,000.</string>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-ma-9cZ">
+                    <rect key="frame" x="20" y="318.5" width="335" height="136.5"/>
+                    <string key="text">When the hunt starts, your first riddle is revealed. Solve the riddle to find out where to go next. When you make it to the correct location, you'll unlock the next riddle. The first team to solve all of the riddles wins.</string>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5e-Ka-iRv">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <navigationItem title="The Hunt" id="DdQ-iN-KNi">
-                            <barButtonItem key="backBarButtonItem" title="Home" image="back" id="F6M-Ph-Fov"/>
+                        <navigationItem id="DdQ-iN-KNi">
+                            <barButtonItem key="backBarButtonItem" title="Home" image="back" id="F6M-Ph-Fov">
+                                <color key="tintColor" red="0.36862745099999999" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost: $20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-3m-uTj">
-                    <rect key="frame" x="28" y="260" width="111" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-Et-Zzw">
-                    <rect key="frame" x="28" y="475" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="More info..."/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-Et-Zzw">
+                    <rect key="frame" x="107" y="595" width="160" height="32"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="HD1-C4-fTb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="See Event Details">
+                        <color key="titleColor" red="0.2156862745" green="0.38823529410000002" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
                         <action selector="tappedMoreInfo:" destination="-1" eventType="touchUpInside" id="w19-KH-fUg"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woY-I8-cfm">
-                    <rect key="frame" x="20" y="587" width="335" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                    <state key="normal" title="Join an Existing Team">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="for a team of 4 (or less)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-ww-sJs">
-                    <rect key="frame" x="141" y="268" width="178" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-Im-9lw">
+                    <rect key="frame" x="12.5" y="169.5" width="350.5" height="109"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNN-ay-Fki">
+                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="109"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-cg-cbb">
+                                    <rect key="frame" x="8" y="8" width="118.5" height="5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="4"/>
+                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-wM-byE">
+                                    <rect key="frame" x="8" y="13" width="118.5" height="54"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="54" id="6iV-3P-kIC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="per team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-ww-sJs">
+                                    <rect key="frame" x="8" y="67" width="118.5" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="29" id="s9t-6b-NsD"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-mQ-RA0">
+                                    <rect key="frame" x="8" y="96" width="118.5" height="5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="4"/>
+                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-eg-FeT">
+                            <rect key="frame" x="134.5" y="0.0" width="216" height="109"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-qP-Z1f">
+                                    <rect key="frame" x="8" y="8" width="200" height="40"/>
+                                    <color key="backgroundColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Y5x-3f-RcS"/>
+                                        <constraint firstAttribute="width" constant="200" id="waP-9D-OnY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                    <state key="normal" title="Create New Team">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tappedCreateNew:" destination="-1" eventType="touchUpInside" id="fpK-MZ-KvA"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPP-8n-FhG">
+                                    <rect key="frame" x="8" y="48" width="200" height="13"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woY-I8-cfm">
+                                    <rect key="frame" x="8" y="61" width="200" height="40"/>
+                                    <color key="backgroundColor" red="0.2156862745" green="0.38823529410000002" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Ynd-cw-4dK"/>
+                                        <constraint firstAttribute="height" constant="40" id="csy-K3-dYi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                    <state key="normal" title="Join Existing Team">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle. Adventure. Solve. Repeat..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acc-8m-BC1">
+                    <rect key="frame" x="40" y="80" width="295" height="69.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="29"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-qP-Z1f">
-                    <rect key="frame" x="20" y="519" width="335" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.2156862745" green="0.38823529410000002" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                    <state key="normal" title="Create a New Team">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-51-rcD">
+                    <rect key="frame" x="20" y="495" width="335" height="96"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Fine Print" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLA-z2-Zsr">
+                            <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-dM-tdJ">
+                            <rect key="frame" x="0.0" y="24" width="333.5" height="72"/>
+                            <string key="text">1. All team members must be at each riddle location and in 
+    the picture.
+2. Teams are limited to 4 members.
+3. Obey all laws on and off the road.
+4. Breach of rules can result in immediate disqualification.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="980" y="104"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fqN-51-rcD" secondAttribute="trailing" constant="20" id="4yK-dk-7DL"/>
+                <constraint firstItem="fqN-51-rcD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="7fG-T2-JNL"/>
+                <constraint firstAttribute="trailing" secondItem="h5b-ma-9cZ" secondAttribute="trailing" constant="20" id="9Wr-5y-Q6o"/>
+                <constraint firstAttribute="bottom" secondItem="RLV-Et-Zzw" secondAttribute="bottom" constant="40" id="9vE-eV-gHi"/>
+                <constraint firstItem="h5b-ma-9cZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DYQ-WN-HjS"/>
+                <constraint firstItem="S0q-Im-9lw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UiG-Yb-UVQ"/>
+                <constraint firstItem="h5b-ma-9cZ" firstAttribute="top" secondItem="S0q-Im-9lw" secondAttribute="bottom" constant="40" id="Xe6-vY-4ni"/>
+                <constraint firstItem="Acc-8m-BC1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ydi-a0-Oo7"/>
+                <constraint firstItem="S0q-Im-9lw" firstAttribute="top" secondItem="Acc-8m-BC1" secondAttribute="bottom" constant="20" id="gwZ-oI-3hw"/>
+                <constraint firstItem="fqN-51-rcD" firstAttribute="top" secondItem="h5b-ma-9cZ" secondAttribute="bottom" constant="40" id="hGA-Fk-WuX"/>
+                <constraint firstItem="Acc-8m-BC1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="iiL-pL-Us2"/>
+                <constraint firstAttribute="trailing" secondItem="Acc-8m-BC1" secondAttribute="trailing" constant="40" id="m8H-uA-qhy"/>
+                <constraint firstItem="Acc-8m-BC1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="pkc-LW-LhX"/>
+                <constraint firstItem="RLV-Et-Zzw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wCf-0J-uWW"/>
+            </constraints>
+            <point key="canvasLocation" x="979.5" y="103.5"/>
         </view>
     </objects>
     <resources>
         <image name="back" width="16" height="16"/>
+        <image name="calpoly-pic" width="1000" height="750"/>
     </resources>
 </document>

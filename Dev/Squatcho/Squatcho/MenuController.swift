@@ -13,8 +13,23 @@ struct MenuItem {
     var text: String
 }
 
-struct Menu {
+class Menu {
     var items = [MenuItem(selected: false, text: ""), MenuItem(selected: true, text: "Home"), MenuItem(selected: false, text: "Team"), MenuItem(selected: false, text: "Map"), MenuItem(selected: false, text: "Details"), MenuItem(selected: false, text: "Account")]
+    
+    init() {
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil, queue: nil, using: selectDetails)
+    }
+    
+    func selectDetails(notification:Notification) {
+        for i in 0...items.count-1 {
+            if items[i].selected {
+                items[i].selected = false
+            }
+            if items[i].text == "Details" {
+                items[i].selected = true
+            }
+        }
+    }
 }
 
 class MenuController: UITableViewController {
@@ -24,7 +39,6 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.sqGreen
-        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil, queue: nil, using: selectDetails)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,21 +73,6 @@ class MenuController: UITableViewController {
                 }
             }
         }
-    }
-    
-    func selectDetails(notification:Notification) {
-        for i in 0...menuItems.items.count-1 {
-            if menuItems.items[i].selected {
-                menuItems.items[i].selected = false
-            }
-            if menuItems.items[i].text == "Details" {
-                menuItems.items[i].selected = true
-            }
-        }
-        updateView()
-//        let indexPath = IndexPath(row: 0, section: 0);
-//        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
-//        self.tableView(self.tableView, didSelectRowAt: indexPath)
     }
     
     override func didReceiveMemoryWarning() {
