@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
         viewController.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: containerView.frame.size.height)
         containerView.addSubview(viewController.view)
         viewController.didMove(toParentViewController: self)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
 //        logo.contentMode = .scaleAspectFit
         locationTitleBar.titleView = imageView
         locationTitleBar.titleView?.contentMode = .center
-        print(locationTitleBar.titleView?.frame)
     }
 
     override func didReceiveMemoryWarning() {

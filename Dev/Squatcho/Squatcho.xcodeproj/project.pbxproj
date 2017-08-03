@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		23430EC4F102D27C19BE1704 /* Pods_Squatcho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */; };
+		A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DDD311F32930700F96443 /* HookPageViewController.swift */; };
+		A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20DDD321F32930700F96443 /* HookPageViewController.xib */; };
+		A23F09901F3391D4007EE38C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F098F1F3391D4007EE38C /* AppState.swift */; };
 		A267076E1F215C520017F859 /* Riddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076D1F215C520017F859 /* Riddle.swift */; };
 		A26707701F216CDB0017F859 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076F1F216CDB0017F859 /* Event.swift */; };
 		A26707721F2179630017F859 /* NSColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26707711F2179630017F859 /* NSColor+.swift */; };
@@ -35,6 +38,9 @@
 		72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.release.xcconfig"; sourceTree = "<group>"; };
 		8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squatcho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.debug.xcconfig"; sourceTree = "<group>"; };
+		A20DDD311F32930700F96443 /* HookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookPageViewController.swift; sourceTree = "<group>"; };
+		A20DDD321F32930700F96443 /* HookPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HookPageViewController.xib; sourceTree = "<group>"; };
+		A23F098F1F3391D4007EE38C /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A267076D1F215C520017F859 /* Riddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riddle.swift; sourceTree = "<group>"; };
 		A267076F1F216CDB0017F859 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A26707711F2179630017F859 /* NSColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+.swift"; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 				A27B88131F20593B00484C13 /* HomeTableViewController.swift */,
 				A280AA761F26D301009A381F /* HomeStatusViewController.swift */,
 				A280AA771F26D301009A381F /* HomeStatusViewController.xib */,
+				A20DDD311F32930700F96443 /* HookPageViewController.swift */,
+				A20DDD321F32930700F96443 /* HookPageViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -146,14 +154,15 @@
 		A28EDF3D1F20553300BD97D4 /* Squatcho */ = {
 			isa = PBXGroup;
 			children = (
-				A2850FBD1F25549800E84152 /* DummyData.swift */,
 				A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */,
+				A23F098F1F3391D4007EE38C /* AppState.swift */,
 				A27B88111F20591F00484C13 /* MenuController.swift */,
 				A27B881F1F205BFC00484C13 /* Menu Items */,
 				A27B88221F21351800484C13 /* Model */,
 				A26707711F2179630017F859 /* NSColor+.swift */,
 				A2BD4D811F259CC900F3D41F /* UIImage+.swift */,
 				A280AA7B1F26D3D6009A381F /* Constants.swift */,
+				A2850FBD1F25549800E84152 /* DummyData.swift */,
 				A28EDF421F20553300BD97D4 /* Main.storyboard */,
 				A28EDF451F20553300BD97D4 /* Assets.xcassets */,
 				A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */,
@@ -238,6 +247,7 @@
 			files = (
 				A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */,
 				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
+				A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */,
 				A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
 			);
@@ -298,7 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */,
 				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
+				A23F09901F3391D4007EE38C /* AppState.swift in Sources */,
 				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
 				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,

@@ -24,7 +24,7 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.sqGreen
-        print("LOADING NEW MENU \(menuItems)")
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil, queue: nil, using: selectDetails)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -60,7 +60,22 @@ class MenuController: UITableViewController {
             }
         }
     }
-
+    
+    func selectDetails(notification:Notification) {
+        for i in 0...menuItems.items.count-1 {
+            if menuItems.items[i].selected {
+                menuItems.items[i].selected = false
+            }
+            if menuItems.items[i].text == "Details" {
+                menuItems.items[i].selected = true
+            }
+        }
+        updateView()
+//        let indexPath = IndexPath(row: 0, section: 0);
+//        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+//        self.tableView(self.tableView, didSelectRowAt: indexPath)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

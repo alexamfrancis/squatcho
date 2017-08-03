@@ -1,5 +1,5 @@
 //
-//  HomeNullViewController.swift
+//  HomeStatusViewController.swift
 //  
 //
 //  Created by Alexandra Francis on 7/24/17.
@@ -10,6 +10,13 @@ import UIKit
 
 class HomeStatusViewController: UIViewController {
     var userStatus: UserStatus
+    
+    @IBOutlet weak var registerButton: UIButton!
+    @IBAction func tappedRegisterButton(_ sender: Any) {
+        // open hook page controller
+        let newViewController = HookPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     
     init(with status: UserStatus) {
         userStatus = status
@@ -32,6 +39,9 @@ class HomeStatusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerButton.layer.cornerRadius = 10
+        registerButton.clipsToBounds = true
+        //        registerButton.layer.masksToBounds = true
         //view.backgroundColor = UIColor.sqGreenLight
         //view.layer.backgroundColor = UIColor.lightGray as! CGColor
 

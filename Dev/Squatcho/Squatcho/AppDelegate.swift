@@ -14,11 +14,14 @@ import Simplicity
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appState = AppState()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBolPa_NDvt51t2aC2D5Vd3NGmxZPWrO60")
-
+        if !appState.loggedIn {
+            
+        }
+        
         return true
     }
     
