@@ -17,7 +17,7 @@
 		A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B880E1F2057AC00484C13 /* SWRevealViewController.m */; };
 		A27B88121F20591F00484C13 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88111F20591F00484C13 /* MenuController.swift */; };
 		A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88131F20593B00484C13 /* HomeTableViewController.swift */; };
-		A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */; };
+		A27B88161F2059FB00484C13 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88151F2059FB00484C13 /* MyTeamViewController.swift */; };
 		A27B88181F205A3400484C13 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88171F205A3400484C13 /* MapViewController.swift */; };
 		A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88191F205BBA00484C13 /* DetailsViewController.swift */; };
 		A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B881B1F205BF400484C13 /* AccountViewController.swift */; };
@@ -49,7 +49,7 @@
 		A27B880E1F2057AC00484C13 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A27B88111F20591F00484C13 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		A27B88131F20593B00484C13 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamTableViewController.swift; sourceTree = "<group>"; };
+		A27B88151F2059FB00484C13 /* MyTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		A27B88171F205A3400484C13 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A27B88191F205BBA00484C13 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A27B881B1F205BF400484C13 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				A280AA7A1F26D311009A381F /* Home */,
-				A27B88151F2059FB00484C13 /* MyTeamTableViewController.swift */,
+				A27B88151F2059FB00484C13 /* MyTeamViewController.swift */,
 				A27B88171F205A3400484C13 /* MapViewController.swift */,
 				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
 				A27B881B1F205BF400484C13 /* AccountViewController.swift */,
@@ -318,7 +318,7 @@
 				A2850FBE1F25549800E84152 /* DummyData.swift in Sources */,
 				A26707701F216CDB0017F859 /* Event.swift in Sources */,
 				A267076E1F215C520017F859 /* Riddle.swift in Sources */,
-				A27B88161F2059FB00484C13 /* MyTeamTableViewController.swift in Sources */,
+				A27B88161F2059FB00484C13 /* MyTeamViewController.swift in Sources */,
 				A27B88211F2130CA00484C13 /* User.swift in Sources */,
 				A27B88141F20593B00484C13 /* HomeTableViewController.swift in Sources */,
 				A280AA781F26D301009A381F /* HomeStatusViewController.swift in Sources */,

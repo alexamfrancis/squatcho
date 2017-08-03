@@ -96,6 +96,7 @@ class MenuController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {return}
         if let cell = tableView.cellForRow(at: indexPath) {
             for i in 0...menuItems.items.count-1 {
                 if menuItems.items[i].selected {

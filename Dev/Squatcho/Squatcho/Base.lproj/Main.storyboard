@@ -244,11 +244,11 @@
             </objects>
             <point key="canvasLocation" x="2800.8000000000002" y="-799.2503748125938"/>
         </scene>
-        <!--My Team-->
+        <!--Event Details-->
         <scene sceneID="H60-A3-UqT">
             <objects>
-                <tableViewController id="BBh-RG-z5b" customClass="MyTeamTableViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEC-c2-Aqh">
+                <tableViewController id="BBh-RG-z5b" customClass="DetailsViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEC-c2-Aqh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,8 +267,10 @@
                             <outlet property="delegate" destination="BBh-RG-z5b" id="TFu-MZ-MRa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Team" id="EXn-kl-320">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="cAl-5U-Kvt"/>
+                    <navigationItem key="navigationItem" title="Event Details" id="EXn-kl-320">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="cAl-5U-Kvt">
+                            <color key="tintColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="cAl-5U-Kvt" id="APu-se-V4A"/>
@@ -276,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btB-UQ-zVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="-99"/>
+            <point key="canvasLocation" x="2801" y="1263"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qhs-GE-Zw3">
@@ -329,7 +331,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BBh-RG-z5b" kind="relationship" relationship="rootViewController" id="x1Y-L5-FoT"/>
+                        <segue destination="Q91-UY-c7q" kind="relationship" relationship="rootViewController" id="zRm-vs-M2R"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn7-Wm-V7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,17 +363,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Q91-UY-c7q" kind="relationship" relationship="rootViewController" id="Ceb-Mz-1TV"/>
+                        <segue destination="BBh-RG-z5b" kind="relationship" relationship="rootViewController" id="fDa-hb-bHN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tge-kG-iAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1849" y="1264"/>
         </scene>
-        <!--Event Details-->
+        <!--My Team-->
         <scene sceneID="n5W-7i-suv">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q91-UY-c7q" customClass="DetailsViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q91-UY-c7q" customClass="MyTeamViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="77A-l6-6hz"/>
                         <viewControllerLayoutGuide type="bottom" id="1QK-Gv-NXt"/>
@@ -381,7 +383,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Event Details" id="NR1-pW-nYe">
+                    <navigationItem key="navigationItem" title="My Team" id="NR1-pW-nYe">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="JHR-D0-v4p">
                             <color key="tintColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -392,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BA-q0-bHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="1264"/>
+            <point key="canvasLocation" x="2801" y="-99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f1G-iu-PbH">
