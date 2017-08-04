@@ -252,7 +252,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="269" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEC-c2-Aqh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.60392159219999997" green="0.81960785390000002" blue="0.38039216399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsTableViewCell" id="3P4-MZ-hSR" customClass="DetailsTableViewCell" customModule="Squatcho" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="269"/>
@@ -263,15 +264,15 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rule Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCu-CW-NS6">
                                             <rect key="frame" x="24" y="8" width="327" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                            <color key="textColor" red="0.60392159219999997" green="0.81960785390000002" blue="0.38039216399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cz-1B-KIB">
                                             <rect key="frame" x="24" y="46" width="327" height="191"/>
                                             <string key="text">At the start time of the hunt, your first riddle will be revealed. Solve the riddle to find out where to go next. If you’re correct and your GPS location matches the right location, you will be prompted to take a team picture to unlock the next riddle. Once you solve all of the riddles, adventuring around SLO, the final riddle will give you the code to the treasure chest with $10,000. If you get there with the code first, it’s yours.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -286,6 +287,7 @@
                                         <constraint firstItem="8cz-1B-KIB" firstAttribute="centerX" secondItem="QCu-CW-NS6" secondAttribute="centerX" id="zpu-ZW-1yW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="ruleText" destination="8cz-1B-KIB" id="lCU-7n-Kln"/>
                                     <outlet property="ruleTitle" destination="QCu-CW-NS6" id="O7l-cA-Vbf"/>
@@ -314,7 +316,7 @@
         <scene sceneID="Qhs-GE-Zw3">
             <objects>
                 <navigationController id="3Ul-dt-p7T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u8Q-tv-5Nn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8Q-tv-5Nn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -356,7 +358,7 @@
         <scene sceneID="FfU-Yn-Npb">
             <objects>
                 <navigationController id="Ite-DJ-AWZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qGe-RL-pFq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qGe-RL-pFq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -372,7 +374,7 @@
         <scene sceneID="kjt-Fy-FdD">
             <objects>
                 <navigationController id="wtD-6F-GY5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q1n-xg-p7k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q1n-xg-p7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -388,7 +390,7 @@
         <scene sceneID="jFs-Ob-kZ7">
             <objects>
                 <navigationController id="TGG-MN-yf9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6WO-Qj-XSG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6WO-Qj-XSG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -430,7 +432,7 @@
         <scene sceneID="f1G-iu-PbH">
             <objects>
                 <navigationController id="Kxb-g0-AB3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ban-oh-VBQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ban-oh-VBQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
