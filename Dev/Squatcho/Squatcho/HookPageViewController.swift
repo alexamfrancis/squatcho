@@ -41,7 +41,7 @@ class HookPageViewController: UIViewController {
 
         let screenSize = UIScreen.main.bounds
         image.frame = screenSize
-        imageOverlay.frame = screenSize
+        imageOverlay.frame = CGRect(x: -screenSize.width, y: 0, width: screenSize.width * 2, height: screenSize.height)
         // Do any additional setup after loading the view.
     }
 

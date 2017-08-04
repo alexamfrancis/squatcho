@@ -38,7 +38,7 @@ class MenuController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.sqGreen
+        view.backgroundColor = UIColor.sqGreenDark
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -92,7 +92,7 @@ class MenuController: UITableViewController {
         return menuItems.items.count
     }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor.sqGreen
+        cell.backgroundColor = UIColor.sqGreenDark
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
