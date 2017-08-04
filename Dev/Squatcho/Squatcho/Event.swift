@@ -49,11 +49,7 @@ struct Prize {
 
 struct Rule {
     var title: String
-    var description: String
-    init(text:String, des:String) {
-        title = text
-        description = des
-    }
+    var text: String
 }
 
 extension CLLocationCoordinate2D {

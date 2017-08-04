@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23430EC4F102D27C19BE1704 /* Pods_Squatcho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */; };
+		A206B21E1F33EBE300CF0EF6 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */; };
 		A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DDD311F32930700F96443 /* HookPageViewController.swift */; };
 		A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20DDD321F32930700F96443 /* HookPageViewController.xib */; };
 		A23F09901F3391D4007EE38C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F098F1F3391D4007EE38C /* AppState.swift */; };
@@ -38,6 +39,7 @@
 		72A4A791C18D9E7DA4E5A8B7 /* Pods-Squatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.release.xcconfig"; sourceTree = "<group>"; };
 		8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Squatcho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9045BA8D26838E432D4EF206 /* Pods-Squatcho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Squatcho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Squatcho/Pods-Squatcho.debug.xcconfig"; sourceTree = "<group>"; };
+		A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		A20DDD311F32930700F96443 /* HookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookPageViewController.swift; sourceTree = "<group>"; };
 		A20DDD321F32930700F96443 /* HookPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HookPageViewController.xib; sourceTree = "<group>"; };
 		A23F098F1F3391D4007EE38C /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A27B88151F2059FB00484C13 /* MyTeamViewController.swift */,
 				A27B88171F205A3400484C13 /* MapViewController.swift */,
 				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
+				A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */,
 				A27B881B1F205BF400484C13 /* AccountViewController.swift */,
 			);
 			name = "Menu Items";
@@ -314,6 +317,7 @@
 				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
 				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,
+				A206B21E1F33EBE300CF0EF6 /* DetailsTableViewCell.swift in Sources */,
 				A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */,
 				A2850FBE1F25549800E84152 /* DummyData.swift in Sources */,
 				A26707701F216CDB0017F859 /* Event.swift in Sources */,

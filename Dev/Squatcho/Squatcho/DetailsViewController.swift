@@ -11,6 +11,8 @@ import UIKit
 class DetailsViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
+    var rules = Constants.rules
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.revealViewController() != nil {
@@ -18,7 +20,9 @@ class DetailsViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+
         // Do any additional setup after loading the view.
     }
 
@@ -30,23 +34,27 @@ class DetailsViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return rules.count
     }
     
-    /*
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.detailCellId, for: indexPath) as? DetailsTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of DetailTableViewCell.")
+        }
+        let rule = rules[indexPath.row]
+        cell.ruleTitle.text = rule.title
+        cell.ruleText.text = rule.text
+        
      
-     // Configure the cell...
-     
-     return cell
+        return cell
      }
-     */
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -92,7 +100,4 @@ class DetailsViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-
-
 }
