@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Domain</key>
+	<string>squatcho.auth0.com</string>
+	<key>ClientId</key>
+	<string>nsqv92iQi8hXVsApzTJ0jKpNvKBu4XEQ</string>
+</dict>
+</plist>

@@ -8,6 +8,8 @@ target 'Squatcho' do
   # Pods for Squatcho
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'Simplicity'
   pod 'Parse'
+  pod 'Auth0', '~> 1.0'
+  pod 'SimpleKeychain'
+
 end

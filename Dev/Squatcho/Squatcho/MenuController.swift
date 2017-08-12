@@ -58,7 +58,6 @@ class MenuController: UITableViewController {
         selectedCell.imageView?.image = (selectedCell.imageView?.image?.withRenderingMode(.alwaysTemplate))!
         selectedCell.imageView?.tintColor = UIColor.sqSelected
         selectedCell.imageView?.frame = CGRect(origin: CGPoint(x: 14, y: 2), size: CGSize(width: (width * 0.8), height: (height * 0.8)))
-//        selectedCell.imageView?.frame.size = CGSize(width: (width * 0.8), height: (height * 0.8))
 
         let unselectedItems = menuItems.items.filter{!$0.selected}
         let _ = tableView.visibleCells.map {

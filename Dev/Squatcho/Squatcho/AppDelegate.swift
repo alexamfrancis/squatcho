@@ -8,30 +8,47 @@
 
 import UIKit
 import GoogleMaps
-import Simplicity
+import Auth0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appState = AppState()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBolPa_NDvt51t2aC2D5Vd3NGmxZPWrO60")
-        if !appState.loggedIn {
-            
-        }
         
+        let loggedIn = checkToken()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialViewController: UIViewController
+        if !loggedIn {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+        }
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
-        return Simplicity.application(app, open: url, options: options)
+    fileprivate func checkToken() -> Bool {
+        SessionManager.shared.retrieveProfile { error in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    return false
+                }
+                return true
+            }
+        }
+        return false
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return Simplicity.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        return Auth0.resumeAuth(url, options: options)
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

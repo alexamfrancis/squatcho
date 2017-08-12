@@ -1,4 +1,6 @@
 PODS:
+  - Auth0 (1.7.1):
+    - SimpleKeychain
   - Bolts/Tasks (1.8.4)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
@@ -9,21 +11,23 @@ PODS:
     - GoogleMaps/Base (= 2.2.0)
   - Parse (1.14.4):
     - Bolts/Tasks (~> 1.8)
-  - Simplicity (2.0.1)
+  - SimpleKeychain (0.8.0)
 
 DEPENDENCIES:
+  - Auth0 (~> 1.0)
   - GoogleMaps
   - GooglePlaces
   - Parse
-  - Simplicity
+  - SimpleKeychain
 
 SPEC CHECKSUMS:
+  Auth0: b23f0d9f45bdcd70652f5427d3411519d79ddaa1
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
-  Simplicity: 58ce0c6569baf45e48ccd25432274ae899097517
+  SimpleKeychain: 84c748463eec601dfee5e7990f55cc82edc5488d
 
-PODFILE CHECKSUM: a08d7b588552cfefe6d2f457374e8f38a55695ea
+PODFILE CHECKSUM: 21a2f2127f45c3067704694c2970865770ac86de
 
 COCOAPODS: 1.2.0

@@ -7,9 +7,36 @@
 //
 
 import UIKit
+import SimpleKeychain
 
 class AccountViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    
+    @IBAction func tappedLogOut() {
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Nope", style: .cancel) { action in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Yep", style: .default) { action in
+            SessionManager.shared.logout()
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let login: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+            self.show(login, sender: nil)
+
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+        
+        let alert = UIAlertController(title: "Log Out?", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
