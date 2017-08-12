@@ -25,7 +25,15 @@ class User {
     var userStatus: UserStatus
     var currentLocation:CLLocationCoordinate2D //maybe dont need to store this in model?
     var signUpDate: Date
-    
+    init() {
+        emailAddress = ""
+        phoneString = ""
+        firstName = ""
+        lastName = ""
+        userStatus = .null
+        currentLocation = CLLocationCoordinate2D()
+        signUpDate = Date()
+    }
     init(email:String, phone:String, first:String, last:String) {
         emailAddress = email
         phoneString = phone

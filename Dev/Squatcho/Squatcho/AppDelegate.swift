@@ -18,31 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBolPa_NDvt51t2aC2D5Vd3NGmxZPWrO60")
         
-        let loggedIn = checkToken()
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var initialViewController: UIViewController
-        if !loggedIn {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
-        } else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+        let loggedIn = checkToken("") { loggedIn in
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var initialViewController: UIViewController
+            if !loggedIn {
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+            } else {
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+            }
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
-
         return true
     }
     
-    fileprivate func checkToken() -> Bool {
+    fileprivate func checkToken(_: Any, respond: (_:(Bool)->Void)) {
         SessionManager.shared.retrieveProfile { error in
-            DispatchQueue.main.async {
-                guard error == nil else {
-                    return false
-                }
-                return true
+            if error != nil {
+                respond(true)
             }
+            respond(false)
         }
-        return false
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

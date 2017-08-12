@@ -41,7 +41,8 @@ class SessionManager {
                 switch(result) {
                 case .success(let profile):
                     self.profile = profile
-                    self.user = User(email: profile.email!, phone: profile.phoneNumber!, first: profile.givenName!, last: profile.familyName!)
+                    self.user = User()
+//                    self.user = User(email: profile.email!, phone: profile.phoneNumber!, first: profile.givenName!, last: profile.familyName!)
                     callback(nil)
                 case .failure(_):
                     self.refreshToken(callback)
