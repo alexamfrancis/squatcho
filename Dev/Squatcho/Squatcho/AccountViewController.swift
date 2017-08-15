@@ -25,7 +25,9 @@ class AccountViewController: UIViewController {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let login: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
-            self.show(login, sender: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+            //self.show(login, sender: nil)
 
         }
         alertController.addAction(OKAction)
