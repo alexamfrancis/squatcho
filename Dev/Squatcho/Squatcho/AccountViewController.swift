@@ -20,6 +20,7 @@ class AccountViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "Yep", style: .default) { action in
+            UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
             SessionManager.shared.logout()
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -33,9 +34,6 @@ class AccountViewController: UIViewController {
             // ...
         }
         
-        let alert = UIAlertController(title: "Log Out?", message: "Are you sure you want to log out?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

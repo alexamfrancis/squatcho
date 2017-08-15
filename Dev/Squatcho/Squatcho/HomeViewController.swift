@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
         user = SessionManager.shared.user
         
         // Set up which home view controller to use

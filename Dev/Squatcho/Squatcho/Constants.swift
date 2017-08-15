@@ -15,6 +15,7 @@ public struct Constants {
     static let selectDetailsMenuItem = "selectDetailsMenuItem"
     static let savedStateLoggedIn = "savedStateLogin"
     static let savedStateUser = "savedStateUser"
+    static let homeSegueIdentifier = "ShowHomeNonAnimated"
     
     
     static let rule1 = Rule(title: "The Hunt", text: "When the hunt starts, your first riddle is revealed. Solve the riddle to find out where to go next. When you make it to the correct location, you will be prompted to take a team picture to unlock the next riddle. Once you solve all of the riddles, adventuring around SLO, the final riddle will give you the code to the treasure chest with $10,000. If you get there with the code first, it’s yours.")

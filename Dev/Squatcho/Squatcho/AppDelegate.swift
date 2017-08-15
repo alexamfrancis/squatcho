@@ -14,34 +14,31 @@ import Auth0
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyBolPa_NDvt51t2aC2D5Vd3NGmxZPWrO60")
         
-        let loggedIn = checkToken("") { loggedIn in
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var initialViewController: UIViewController
-            if !loggedIn {
-                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
-            } else {
-                initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
-            }
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+        var loggedIn : Bool
+        if defaults.object(forKey: Constants.savedStateLoggedIn) != nil {
+            loggedIn = defaults.bool(forKey: Constants.savedStateLoggedIn)
+        } else {
+            loggedIn = false
         }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialViewController: UIViewController
+        if !loggedIn {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+        }
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+
         return true
     }
-    
-    fileprivate func checkToken(_: Any, respond: (_:(Bool)->Void)) {
-        SessionManager.shared.retrieveProfile { error in
-            if error != nil {
-                respond(true)
-            }
-            respond(false)
-        }
-    }
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         return Auth0.resumeAuth(url, options: options)
     }

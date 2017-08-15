@@ -16,7 +16,6 @@ class HomeStatusViewController: UIViewController {
         // open hook page controller
         let newViewController = HookPageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
-        
     }
     
     init(with status: UserStatus) {

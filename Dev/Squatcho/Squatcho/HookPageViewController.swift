@@ -16,16 +16,12 @@ class HookPageViewController: UIViewController {
     @IBOutlet weak var joinExistingButton: UIButton!
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBAction func tappedMoreInfo(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let detailVC: DetailsViewController = storyboard.instantiateViewController(withIdentifier: Constants.detailsViewControllerIdentifier) as! DetailsViewController
-        show(detailVC, sender: nil)
-        NotificationCenter.default.post(name:Notification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil, userInfo: nil)
-
-//        self.navigationController?.popToViewController(detailVC, animated: true)
-//        _ = navigationController?.popToRootViewController(animated: true)
-//        performSegue(withIdentifier: Constants.showDetailsVCSegueID, sender: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil)
     }
+    
     @IBAction func tappedCreateNew(_ sender: Any) {
         UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
     }

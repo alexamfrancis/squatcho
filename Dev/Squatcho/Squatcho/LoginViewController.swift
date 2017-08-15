@@ -70,11 +70,7 @@ class LoginViewController: UIViewController {
     
     fileprivate func showLogin() {
         guard let clientInfo = plistValues(bundle: Bundle.main) else { return }
-        Auth0
-            .webAuth()
-            .scope("openid profile offline_access")
-            .audience("https://" + clientInfo.domain + "/userinfo")
-            .start {
+        Auth0.webAuth().scope("openid profile offline_access").audience("https://" + clientInfo.domain + "/userinfo").start {
                 switch $0 {
                 case .failure(let error):
                     // Handle the error
@@ -84,28 +80,34 @@ class LoginViewController: UIViewController {
                     SessionManager.shared.storeTokens(accessToken, refreshToken: refreshToken)
                     SessionManager.shared.retrieveProfile { error in
                         DispatchQueue.main.async {
-                            self.openRevealVC()
+                            // self.openRevealVC()
+                            UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
+                            self.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)
                         }
                     }
                 }
         }
     }
-    
-//    fileprivate func checkToken() {
-//        let loadingAlert = UIAlertController.loadingAlert()
-//        loadingAlert.presentInViewController(self)
-//        SessionManager.shared.retrieveProfile { error in
-//            DispatchQueue.main.async {
-//                loadingAlert.dismiss(animated: true) {
-//                    guard error == nil else {
-//                        return self.showLogin()
-//                    }
-//                    self.openRevealVC() // MAYBE CHANGE THIS?!?
-//                }
-//            }
-//        }
-//    }
-//
+
+    fileprivate func checkToken() {
+        let loadingAlert = UIAlertController.loadingAlert()
+        loadingAlert.presentInViewController(self)
+        SessionManager.shared.retrieveProfile { error in
+            DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true) {
+                    guard error == nil else {
+                        return self.showLogin()
+                    }
+                    UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
+                    // self.openRevealVC()
+                    self.dismiss(animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)
+                }
+            }
+        }
+    }
+
     /*
     // MARK: - Navigation
 
@@ -118,36 +120,15 @@ class LoginViewController: UIViewController {
 
 }
 
-//func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
-//    guard
-//        let path = bundle.path(forResource: "Auth0", ofType: "plist"),
-//        let values = NSDictionary(contentsOfFile: path) as? [String: Any]
-//        else {
-//            print("Missing Auth0.plist file with 'ClientId' and 'Domain' entries in main bundle!")
-//            return nil
-//    }
-//
-//    guard
-//        let clientId = values["ClientId"] as? String,
-//        let domain = values["Domain"] as? String
-//        else {
-//            print("Auth0.plist file at \(path) is missing 'ClientId' and/or 'Domain' entries!")
-//            print("File currently has the following entries: \(values)")
-//            return nil
-//    }
-//    return (clientId: clientId, domain: domain)
-//}
-//
-//
-//extension UIAlertController {
-//
-//    static func loadingAlert() -> UIAlertController {
-//        return UIAlertController(title: "Loading", message: "Please, wait...", preferredStyle: .alert)
-//    }
-//
-//    func presentInViewController(_ viewController: UIViewController) {
-//        viewController.present(self, animated: true, completion: nil)
-//    }
-//
-//}
+extension UIAlertController {
+
+    static func loadingAlert() -> UIAlertController {
+        return UIAlertController(title: "Loading", message: "Please, wait...", preferredStyle: .alert)
+    }
+
+    func presentInViewController(_ viewController: UIViewController) {
+        viewController.present(self, animated: true, completion: nil)
+    }
+
+}
 

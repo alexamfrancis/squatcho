@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -72,19 +72,19 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-Im-9lw">
-                    <rect key="frame" x="12.5" y="169.5" width="350.5" height="109"/>
+                    <rect key="frame" x="12.5" y="169.5" width="351" height="109"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNN-ay-Fki">
-                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="109"/>
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="109"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-cg-cbb">
-                                    <rect key="frame" x="8" y="8" width="118.5" height="5"/>
+                                    <rect key="frame" x="8" y="8" width="119" height="5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="4"/>
                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-wM-byE">
-                                    <rect key="frame" x="8" y="13" width="118.5" height="54"/>
+                                    <rect key="frame" x="8" y="13" width="119" height="54"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="6iV-3P-kIC"/>
                                     </constraints>
@@ -93,7 +93,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="per team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-ww-sJs">
-                                    <rect key="frame" x="8" y="67" width="118.5" height="29"/>
+                                    <rect key="frame" x="8" y="67" width="119" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="s9t-6b-NsD"/>
                                     </constraints>
@@ -102,7 +102,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-mQ-RA0">
-                                    <rect key="frame" x="8" y="96" width="118.5" height="5"/>
+                                    <rect key="frame" x="8" y="96" width="119" height="5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="4"/>
                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-eg-FeT">
-                            <rect key="frame" x="134.5" y="0.0" width="216" height="109"/>
+                            <rect key="frame" x="135" y="0.0" width="216" height="109"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-qP-Z1f">
                                     <rect key="frame" x="8" y="8" width="200" height="40"/>
@@ -158,16 +158,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-51-rcD">
-                    <rect key="frame" x="20" y="495" width="335" height="96"/>
+                    <rect key="frame" x="20" y="495" width="335" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Fine Print" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLA-z2-Zsr">
-                            <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-dM-tdJ">
-                            <rect key="frame" x="0.0" y="24" width="333.5" height="72"/>
+                            <rect key="frame" x="0.0" y="24" width="0.0" height="0.0"/>
                             <string key="text">1. All team members must be at each riddle location and in 
     the picture.
 2. Teams are limited to 4 members.
