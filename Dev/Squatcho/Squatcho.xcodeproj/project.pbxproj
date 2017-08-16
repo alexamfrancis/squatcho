@@ -12,6 +12,7 @@
 		A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DDD311F32930700F96443 /* HookPageViewController.swift */; };
 		A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20DDD321F32930700F96443 /* HookPageViewController.xib */; };
 		A23F09901F3391D4007EE38C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F098F1F3391D4007EE38C /* SessionManager.swift */; };
+		A240666E1F43A02E0032D39B /* PymongoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240666D1F43A02E0032D39B /* PymongoService.swift */; };
 		A267076E1F215C520017F859 /* Riddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076D1F215C520017F859 /* Riddle.swift */; };
 		A26707701F216CDB0017F859 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076F1F216CDB0017F859 /* Event.swift */; };
 		A26707721F2179630017F859 /* NSColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26707711F2179630017F859 /* NSColor+.swift */; };
@@ -45,6 +46,7 @@
 		A20DDD311F32930700F96443 /* HookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookPageViewController.swift; sourceTree = "<group>"; };
 		A20DDD321F32930700F96443 /* HookPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HookPageViewController.xib; sourceTree = "<group>"; };
 		A23F098F1F3391D4007EE38C /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		A240666D1F43A02E0032D39B /* PymongoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PymongoService.swift; sourceTree = "<group>"; };
 		A267076D1F215C520017F859 /* Riddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riddle.swift; sourceTree = "<group>"; };
 		A267076F1F216CDB0017F859 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A26707711F2179630017F859 /* NSColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,15 @@
 				8FC6DE2B98DBD398B229D7CD /* Pods_Squatcho.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A240666F1F43A1F90032D39B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A23F098F1F3391D4007EE38C /* SessionManager.swift */,
+				A240666D1F43A02E0032D39B /* PymongoService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		A27B88101F2057BC00484C13 /* SWRevealViewController */ = {
@@ -162,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A28EDF3E1F20553300BD97D4 /* AppDelegate.swift */,
-				A23F098F1F3391D4007EE38C /* SessionManager.swift */,
+				A240666F1F43A1F90032D39B /* Services */,
 				A2D8D5841F3D301500E85ACF /* LoginViewController.swift */,
 				A27B88111F20591F00484C13 /* MenuController.swift */,
 				A27B881F1F205BFC00484C13 /* Menu Items */,
@@ -321,6 +332,7 @@
 				A2D8D5851F3D301500E85ACF /* LoginViewController.swift in Sources */,
 				A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */,
 				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
+				A240666E1F43A02E0032D39B /* PymongoService.swift in Sources */,
 				A23F09901F3391D4007EE38C /* SessionManager.swift in Sources */,
 				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,

@@ -17,6 +17,7 @@ enum UserStatus {
 }
 
 class User {
+    var id: String
     var emailAddress: String
     var phoneString: String
     //var phoneNumber: PhoneNumber
@@ -26,6 +27,7 @@ class User {
     var currentLocation:CLLocationCoordinate2D //maybe dont need to store this in model?
     var signUpDate: Date
     init() {
+        id = ""
         emailAddress = ""
         phoneString = ""
         firstName = ""
@@ -34,6 +36,18 @@ class User {
         currentLocation = CLLocationCoordinate2D()
         signUpDate = Date()
     }
+    
+    init(email:String, id: String, status: UserStatus) {
+        self.id = id
+        emailAddress = email
+        phoneString = ""
+        firstName = ""
+        lastName = ""
+        userStatus = status
+        currentLocation = CLLocationCoordinate2D()
+        signUpDate = Date()
+    }
+    
     init(email:String, phone:String, first:String, last:String) {
         emailAddress = email
         phoneString = phone
@@ -43,6 +57,7 @@ class User {
         currentLocation = CLLocationCoordinate2D()
         // get the current date and time
         signUpDate = Date()
+        id = ""
     }
     
     func changeStatus(to new:UserStatus) {

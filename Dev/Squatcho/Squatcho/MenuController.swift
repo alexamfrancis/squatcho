@@ -68,7 +68,6 @@ class MenuController: UITableViewController {
                     $0.imageView?.image = ($0.imageView?.image?.withRenderingMode(.alwaysTemplate))!
                     $0.imageView?.tintColor = UIColor.sqUnselected
                     $0.imageView?.frame = CGRect(origin: CGPoint(x: 17, y: 6), size: CGSize(width: (width * 0.6), height: (height * 0.6)))
-//                    $0.imageView?.frame.size = CGSize(width: (width * 0.5), height: (height * 0.5))
                 }
             }
         }

@@ -20,7 +20,6 @@ class AccountViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "Yep", style: .default) { action in
-            UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
             SessionManager.shared.logout()
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

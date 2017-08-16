@@ -32,7 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !loggedIn {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
         } else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+            if defaults.object(forKey: Constants.savedStateUser) != nil {
+                SessionManager.shared.user = defaults.object(forKey: Constants.savedStateUser) as! User
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
+            } else {
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+            }
+            
         }
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()

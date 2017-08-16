@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - Auth0 (1.7.1):
     - SimpleKeychain
   - Bolts/Tasks (1.8.4)
@@ -14,6 +15,7 @@ PODS:
   - SimpleKeychain (0.8.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Auth0 (~> 1.0)
   - GoogleMaps
   - GooglePlaces
@@ -21,6 +23,7 @@ DEPENDENCIES:
   - SimpleKeychain
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Auth0: b23f0d9f45bdcd70652f5427d3411519d79ddaa1
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
@@ -28,6 +31,6 @@ SPEC CHECKSUMS:
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   SimpleKeychain: 84c748463eec601dfee5e7990f55cc82edc5488d
 
-PODFILE CHECKSUM: 21a2f2127f45c3067704694c2970865770ac86de
+PODFILE CHECKSUM: 5a19707d6bc6e1db38c3f91e9562ddbf46c6277a
 
 COCOAPODS: 1.2.0

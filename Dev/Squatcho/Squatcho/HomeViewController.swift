@@ -12,7 +12,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var locationTitleBar: UINavigationItem!
     @IBOutlet weak var containerView: UIView!
-    var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        user = SessionManager.shared.user
         
         // Set up which home view controller to use
         let viewController = HomeStatusViewController(with: .null)

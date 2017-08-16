@@ -41,8 +41,10 @@ class SessionManager {
                 switch(result) {
                 case .success(let profile):
                     self.profile = profile
-                    self.user = User()
-//                    self.user = User(email: profile.email!, phone: profile.phoneNumber!, first: profile.givenName!, last: profile.familyName!)
+                    PymongoService.shared.getUser(uid: profile.user_id, email: profile.email) { newUser in
+                        UserDefaults.standard.set(newUser, forKey: Constants.savedStateUser)
+                        self.user = newUser
+                    }
                     callback(nil)
                 case .failure(_):
                     self.refreshToken(callback)
@@ -71,6 +73,7 @@ class SessionManager {
     }
     
     func logout() {
+        UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
         self.keychain.clearAll()
     }
     
