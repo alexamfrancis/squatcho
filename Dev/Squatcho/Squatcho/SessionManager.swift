@@ -42,8 +42,7 @@ class SessionManager {
                 case .success(let profile):
                     self.profile = profile
                     PymongoService.shared.getUser(uid: profile.user_id, email: profile.email) { newUser in
-                        UserDefaults.standard.set(newUser, forKey: Constants.savedStateUser)
-                        self.user = newUser
+                        UserDefaults.standard.set(profile.user_id, forKey: Constants.savedStateUser)
                     }
                     callback(nil)
                 case .failure(_):

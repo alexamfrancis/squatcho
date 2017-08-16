@@ -22,7 +22,11 @@ public struct Constants {
     
     // url endpoints
     static let getUserURL = "http://17.217.38.0:8082/user"
-    static let updateUserURL = "http://17.217.38.0:8082/update"
+    static let inviteURL = "http://17.217.38.0:8082/invite"
+    static let acceptURL = "http://17.217.38.0:8082/accept"
+    static let removeURL = "http://17.217.38.0:8082/remove"
+    static let availableUsersURL = "http://17.217.38.0:8082/availableUsers"
+    static let checkPendingURL = "http://17.217.38.0:8082/checkPending"
 
     
     static let rule1 = Rule(title: "The Hunt", text: "When the hunt starts, your first riddle is revealed. Solve the riddle to find out where to go next. When you make it to the correct location, you will be prompted to take a team picture to unlock the next riddle. Once you solve all of the riddles, adventuring around SLO, the final riddle will give you the code to the treasure chest with $10,000. If you get there with the code first, it’s yours.")

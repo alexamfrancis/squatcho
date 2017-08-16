@@ -12,6 +12,7 @@ from bson.objectid import ObjectId
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
+print "CREATING DATABASE"
 client = MongoClient()
 db = client.squatchodb
 userModel = db.userList
@@ -29,6 +30,7 @@ def getTeam(userId):
 
 # happens when a user (pending) accepts an invitation, userId is the id of the member
 def addMember(userId, teamName):
+    print 'ADDING TEAM MEMBER'
     result = teamModel.find_one({'teamName':teamName})
     pendingIds = result['pendingIds']
     memberIds = result['memberIds']
@@ -39,6 +41,7 @@ def addMember(userId, teamName):
 
 # only leaders can do this, userId is the id of the member to be removed
 def removeMember(userId, teamName):
+    print 'REMOVING TEAM MEMBER'
     result = teamModel.find_one({'teamName':teamName})
     pendingIds = result['pendingIds']
     memberIds = result['memberIds']
@@ -49,6 +52,7 @@ def removeMember(userId, teamName):
 
 # only leaders can do this, userId is the id of the member
 def inviteMember(userId, teamName):
+    print 'INVITING TEAM MEMBER'
     result = teamModel.find_one({'teamName':teamName})
     pendingIds = result['pendingIds']
     pendingIds.append(userId)
@@ -57,6 +61,7 @@ def inviteMember(userId, teamName):
 
 # called when a leader pays for their team, userId is the id of the leader
 def addTeam(userId, teamName):
+    print 'ADDING TEAM'
     if checkUnique(teamName):
         team = {'teamName':teamName, 'leaderId': userId, 'pendingIds': [], 'memberIds': []}
         teamModel.insert_one(team)
@@ -73,7 +78,6 @@ def checkUnique(teamName):
 
 def updateUserStatus(userId, status):
     userModel.update_one({'userId':uid}, {'$set': {'status':status}})
-    return 'Success'
 
 def updateUserTeam(userId, teamName):
     userModel.update_one({'userId':uid}, {'$set': {'teamName':teamName}})
@@ -103,17 +107,35 @@ def user():
         print "NEW USER: ", dumps(response)
         return dumps(response)
 
-# called when someone joins a team or leaves a team
-@app.route("/updateUser", methods=['POST'])
-def updateUser():
+# called when someone accepts an invitation
+@app.route("/accept", methods=['POST'])
+def accept():
     body = json.loads(request.data)
     uid = body['userId']
-    status = body['status']
-    team = body['teamName']
-    if status is not None: updateUserStatus(uid, status)
-    if team is not None: updateUserTeam(uid, team)
+    updateUserStatus(uid, 'member')
     response = userModel.find_one({'userId':uid})
+    addMember(uid, response['team'])
     return dumps(response)
+
+@app.route("/invite", methods=['POST'])
+def invite():
+    body = json.loads(request.data)
+    uid = body['userId']
+    team = body['teamName']
+    updateUserTeam(uid, team)
+    updateUserStatus(uid, 'pending')
+    return inviteMember(uid, team)
+
+@app.route("/remove", methods=['POST'])
+def remove():
+    body = json.loads(request.data)
+    uid = body['userId']
+    team = body['teamName']
+    # remove the teamname field from user
+    userModel.update({'userId':uid}, {'$unset': {'teamName':1}})
+    updateUserStatus(uid, 'null')
+    return removeMember(uid, teamName)
+
 
 # returns a success string or a error string if the team name has been taken
 @app.route("/newTeam", methods=['POST'])
@@ -121,6 +143,8 @@ def newTeam():
     body = json.loads(request.data)
     uid = body['userId']
     team = body['teamName']
+    updateUserTeam(uid, team)
+    updateUserStatus(uid, 'leader')
     return addTeam(uid, team)
 
 # called by a leader to invite all available users that aren't on another team
@@ -138,12 +162,8 @@ def checkPending():
     for team in teams:
         for pendingIds in team['pendingIds']:
             if uid in pendingIds:
-                return team['teamName']
+                return dumps(team)
     return 'ERROR: No requests pending.'
-
-
-
-
 
 if __name__ == "__main__":
     app.run(host='', port=8082)

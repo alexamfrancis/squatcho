@@ -19,6 +19,8 @@ enum UserStatus {
 class User {
     var id: String
     var emailAddress: String
+    var teamName: String
+    
     var phoneString: String
     //var phoneNumber: PhoneNumber
     var firstName: String
@@ -26,9 +28,11 @@ class User {
     var userStatus: UserStatus
     var currentLocation:CLLocationCoordinate2D //maybe dont need to store this in model?
     var signUpDate: Date
+    
     init() {
         id = ""
         emailAddress = ""
+        team = ""
         phoneString = ""
         firstName = ""
         lastName = ""
@@ -40,6 +44,7 @@ class User {
     init(email:String, id: String, status: UserStatus) {
         self.id = id
         emailAddress = email
+        teamName = ""
         phoneString = ""
         firstName = ""
         lastName = ""
@@ -48,16 +53,16 @@ class User {
         signUpDate = Date()
     }
     
-    init(email:String, phone:String, first:String, last:String) {
+    init(email:String, id: String, status: UserStatus, team: String) {
+        self.id = id
         emailAddress = email
-        phoneString = phone
-        firstName = first
-        lastName = last
-        userStatus = .null
+        teamName = team
+        phoneString = ""
+        firstName = ""
+        lastName = ""
+        userStatus = status
         currentLocation = CLLocationCoordinate2D()
-        // get the current date and time
         signUpDate = Date()
-        id = ""
     }
     
     func changeStatus(to new:UserStatus) {
