@@ -32,7 +32,7 @@ class User {
     init() {
         id = ""
         emailAddress = ""
-        team = ""
+        teamName = ""
         phoneString = ""
         firstName = ""
         lastName = ""

@@ -41,9 +41,7 @@ class SessionManager {
                 switch(result) {
                 case .success(let profile):
                     self.profile = profile
-                    PymongoService.shared.getUser(uid: profile.user_id, email: profile.email) { newUser in
-                        UserDefaults.standard.set(profile.user_id, forKey: Constants.savedStateUser)
-                    }
+                    self.getUserId(accessToken: accessToken)
                     callback(nil)
                 case .failure(_):
                     self.refreshToken(callback)
@@ -69,6 +67,32 @@ class SessionManager {
                     self.logout()
                 }
         }
+    }
+    
+    func getUserId(accessToken: String) {
+        let headers = ["authorization": "Bearer \(accessToken)"]
+        let url = URL(fileURLWithPath: "https://squatcho.auth0.com/api/v2/users/USER_ID")
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error!)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                guard let user_id = httpResponse?.allHeaderFields["user_id"] as? String else {return}
+                guard let email = httpResponse?.allHeaderFields["email"] as? String else {return}
+                PymongoService.shared.getUser(uid: user_id, email: email) { newUser in
+                    UserDefaults.standard.set(user_id, forKey: Constants.savedStateUser)
+                }
+
+                print(httpResponse ?? "ERROR ON RESPONSE FOR USER_ID")
+            }
+        })
+        
+        dataTask.resume()
     }
     
     func logout() {
