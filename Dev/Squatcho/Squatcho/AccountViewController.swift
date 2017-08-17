@@ -22,12 +22,7 @@ class AccountViewController: UIViewController {
         let OKAction = UIAlertAction(title: "Yep", style: .default) { action in
             SessionManager.shared.logout()
             self.presentingViewController?.dismiss(animated: true, completion: nil)
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let login: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
             self.navigationController?.popToRootViewController(animated: true)
-            
-            //self.show(login, sender: nil)
-
         }
         alertController.addAction(OKAction)
         

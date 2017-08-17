@@ -39,10 +39,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 86.0, height: 20.0))
         imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFit
-        let logo = UIImageView(image: UIImage(named: "logo"))
-        print(imageView.frame.size)
         
-//        logo.contentMode = .scaleAspectFit
         locationTitleBar.titleView = imageView
         locationTitleBar.titleView?.contentMode = .center
     }

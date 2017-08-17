@@ -102,7 +102,7 @@ def user():
     else:
         #new user!
         user = {'userId':userId, 'email': email, 'status': 'null'}
-        result = userModel.insert_one(resp)
+        result = userModel.insert_one(user)
         response = userModel.find_one({'_id':result.inserted_id})
         print "NEW USER: ", dumps(response)
         return dumps(response)

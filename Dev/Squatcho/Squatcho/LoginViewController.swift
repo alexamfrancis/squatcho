@@ -81,6 +81,15 @@ class LoginViewController: UIViewController {
                     SessionManager.shared.retrieveProfile { error in
                         DispatchQueue.main.async {
                             // self.openRevealVC()
+                            guard let id = credentials.idToken else {
+                                print("ERROR ON ID TOKEN")
+                                return
+                            }
+                            guard let profile = SessionManager.shared.profile else {
+                                print("ERROR ON PROFILE")
+                                return
+                            }
+                            SessionManager.shared.getMetadata(idToken: id , profile: profile)
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
                             self.dismiss(animated: true, completion: nil)
                             self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)

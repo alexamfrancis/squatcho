@@ -33,6 +33,8 @@
 		A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF421F20553300BD97D4 /* Main.storyboard */; };
 		A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF451F20553300BD97D4 /* Assets.xcassets */; };
 		A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28EDF471F20553300BD97D4 /* LaunchScreen.storyboard */; };
+		A2A023171F464F8D00DD3AD4 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */; };
+		A2A023181F464F8D00DD3AD4 /* CountdownViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */; };
 		A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD4D811F259CC900F3D41F /* UIImage+.swift */; };
 		A2D8D5831F3D125C00E85ACF /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2D8D5821F3D125C00E85ACF /* Auth0.plist */; };
 		A2D8D5851F3D301500E85ACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8D5841F3D301500E85ACF /* LoginViewController.swift */; };
@@ -71,6 +73,8 @@
 		A28EDF451F20553300BD97D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28EDF481F20553300BD97D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A28EDF4A1F20553300BD97D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownViewController.xib; sourceTree = "<group>"; };
 		A2BD4D811F259CC900F3D41F /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		A2D8D5821F3D125C00E85ACF /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		A2D8D5841F3D301500E85ACF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				A27B88131F20593B00484C13 /* HomeViewController.swift */,
 				A280AA761F26D301009A381F /* HomeStatusViewController.swift */,
 				A280AA771F26D301009A381F /* HomeStatusViewController.xib */,
+				A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */,
+				A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */,
 				A20DDD311F32930700F96443 /* HookPageViewController.swift */,
 				A20DDD321F32930700F96443 /* HookPageViewController.xib */,
 			);
@@ -269,6 +275,7 @@
 				A2D8D5831F3D125C00E85ACF /* Auth0.plist in Resources */,
 				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
 				A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */,
+				A2A023181F464F8D00DD3AD4 /* CountdownViewController.xib in Resources */,
 				A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
 			);
@@ -351,6 +358,7 @@
 				A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */,
 				A27B88241F21522400484C13 /* Team.swift in Sources */,
 				A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */,
+				A2A023171F464F8D00DD3AD4 /* CountdownViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

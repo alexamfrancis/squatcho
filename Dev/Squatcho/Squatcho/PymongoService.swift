@@ -14,6 +14,7 @@ class PymongoService {
     private init () { }
 
     func getUser(uid: String, email: String, respond: @escaping (_: User) -> Void) {
+        print(uid + email)
         let params:Parameters = ["userId":uid, "email":email]
         
         Alamofire.request(Constants.getUserURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in

@@ -41,7 +41,6 @@ class SessionManager {
                 switch(result) {
                 case .success(let profile):
                     self.profile = profile
-                    self.getUserId(accessToken: accessToken)
                     callback(nil)
                 case .failure(_):
                     self.refreshToken(callback)
@@ -60,7 +59,7 @@ class SessionManager {
                 switch(result) {
                 case .success(let credentials):
                     guard let accessToken = credentials.accessToken else { return }
-                    self.storeTokens(accessToken)
+                    self.storeTokens(accessToken)//, refreshToken: refreshToken)
                     self.retrieveProfile(callback)
                 case .failure(let error):
                     callback(error)
@@ -69,34 +68,32 @@ class SessionManager {
         }
     }
     
-    func getUserId(accessToken: String) {
-        let headers = ["authorization": "Bearer \(accessToken)"]
-        let url = URL(fileURLWithPath: "https://squatcho.auth0.com/api/v2/users/USER_ID")
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error!)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                guard let user_id = httpResponse?.allHeaderFields["user_id"] as? String else {return}
-                guard let email = httpResponse?.allHeaderFields["email"] as? String else {return}
-                PymongoService.shared.getUser(uid: user_id, email: email) { newUser in
-                    UserDefaults.standard.set(user_id, forKey: Constants.savedStateUser)
+    func getMetadata(idToken: String, profile: UserInfo) {
+        Auth0
+            .users(token: idToken)
+            .get(profile.sub, fields: ["user_id", "email"], include: true)
+            .start { result in
+                switch result {
+                case .success(let user):
+                    guard let uid = user["user_id"] as? String else { return }
+                    guard let email = user["email"] as? String else {
+                        print("Missing Email Address")
+                        return
+                    }
+                    PymongoService.shared.getUser(uid: uid, email: email) { user in
+                        UserDefaults.standard.set(user, forKey: Constants.savedStateUser)
+                        self.user = user
+                    }
+                    
+                case .failure( _): break
+                    // Deal with failure
                 }
-
-                print(httpResponse ?? "ERROR ON RESPONSE FOR USER_ID")
-            }
-        })
-        
-        dataTask.resume()
+        }
     }
     
     func logout() {
         UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
+        UserDefaults.standard.removeObject(forKey: Constants.savedStateUser)
         self.keychain.clearAll()
     }
     
@@ -121,27 +118,3 @@ func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
     }
     return (clientId: clientId, domain: domain)
 }
-//class AppState {
-//    var loggedIn: Bool
-//    var user: User?
-//    let defaults = UserDefaults.standard
-//
-//    init() {
-//        let keychain = A0SimpleKeychain(service: "Auth0")
-//        guard let accessToken = keychain.string(forKey: "access_token") else {
-//            // accessToken doesn't exist, user has to enter their credentials to log in
-//            // Present the Login
-//            loggedIn = false
-//            return
-//        }
-//
-//        loggedIn = true
-//
-//        if defaults.object(forKey: Constants.savedStateUser) != nil {
-//            user = defaults.object(forKey: Constants.savedStateUser) as! User
-//        } else {
-//            user = nil
-//        }
-//    }
-//}
-
