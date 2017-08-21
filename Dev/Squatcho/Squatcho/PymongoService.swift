@@ -23,29 +23,18 @@ class PymongoService {
                 print(value)
                 
                 if let val = value as? [String:Any], let status = val["status"] as? String {
-                    var userStatus: UserStatus
-                    switch status {
-                    case "null":
-                        userStatus = UserStatus.null
-                    case "pending":
-                        userStatus = UserStatus.pending
-                    case "leader":
-                        userStatus = UserStatus.leader
-                    case "member":
-                        userStatus = UserStatus.member
-                    default:
-                        userStatus = UserStatus.null
-                    }
+                    var user: User
                     if let val = value as? [String:Any],let team = val["teamName"] as? String {
-                        let user = User(email: email, id: uid, status: userStatus, team: team)
-                        SessionManager.shared.user = user
-                        respond(user)
+                        user = User(email: email, id: uid, status: status, team: team)
                     } else {
-                        let user = User(email: email, id: uid, status: userStatus)
-                        SessionManager.shared.user = user
-                        
-                        respond(user)
+                        user = User(email: email, id: uid, status: status)
                     }
+                    let userDefaults = UserDefaults.standard
+                    let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+                    userDefaults.set(encodedData, forKey: Constants.savedStateUser)
+                    userDefaults.synchronize()
+                    SessionManager.shared.user = user
+                    respond(user)
                 }
             }
         }
@@ -53,7 +42,7 @@ class PymongoService {
     
     /// Called ONLY when user is leader status and has a team name // response contains updated team
     func inviteMembers(memberId: String) {
-        if SessionManager.shared.user?.userStatus == UserStatus.leader, let team = SessionManager.shared.user?.teamName {
+        if SessionManager.shared.user?.userStatus == Constants.kLeader, let team = SessionManager.shared.user?.teamName {
             let params:Parameters = ["userId":memberId, "teamName": team]
             Alamofire.request(Constants.inviteURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in print(response.result.value ?? "ERROR: NO RETURN VALUE") }
         }
@@ -61,7 +50,7 @@ class PymongoService {
     
     /// Called ONLY when user is leader status and team members // response contains updated team
     func removeMember(memberId: String) {
-        if SessionManager.shared.user?.userStatus == UserStatus.leader, let team = SessionManager.shared.user?.teamName {
+        if SessionManager.shared.user?.userStatus == Constants.kLeader, let team = SessionManager.shared.user?.teamName {
             let params:Parameters = ["userId": memberId, "teamName": team]
             Alamofire.request(Constants.inviteURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in print(response.result.value ?? "ERROR: NO RETURN VALUE") }
         }
@@ -69,7 +58,7 @@ class PymongoService {
 
     /// Called ONLY when the user has a pending invitation // response contains updated user
     func acceptInvitation() {
-        if SessionManager.shared.user?.userStatus == UserStatus.pending, let team = SessionManager.shared.user?.teamName {
+        if SessionManager.shared.user?.userStatus == Constants.kPending, let team = SessionManager.shared.user?.teamName {
             let params:Parameters = ["userId":SessionManager.shared.user!.id, "teamName": team]
             Alamofire.request(Constants.acceptURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in print(response.result.value ?? "ERROR: NO RETURN VALUE") }
         }
@@ -77,7 +66,7 @@ class PymongoService {
     
     /// Called ONLY when user is leader status // response contains the team that has invited them
     func checkPending() {
-        if SessionManager.shared.user?.userStatus == UserStatus.pending {
+        if SessionManager.shared.user?.userStatus == Constants.kPending {
             let params:Parameters = ["userId":SessionManager.shared.user!.id]
             Alamofire.request(Constants.acceptURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in print(response.result.value ?? "ERROR: NO RETURN VALUE") }
         }

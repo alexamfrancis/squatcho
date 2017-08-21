@@ -20,6 +20,7 @@ class SessionManager {
     let keychain = A0SimpleKeychain(service: "Auth0")
     var profile: UserInfo?
     var user: User?
+    var startedLoggedin: Bool = false
 
     private init () { }
     
@@ -82,9 +83,6 @@ class SessionManager {
                     }
                     PymongoService.shared.getUser(uid: uid, email: email) { user in
                         
-                        UserDefaults.standard.set(uid, forKey: Constants.savedStateUserId)
-                        UserDefaults.standard.synchronize()
-                        
                     }
                     
                 case .failure( _): break
@@ -94,8 +92,10 @@ class SessionManager {
     }
     
     func logout() {
-        UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
-        UserDefaults.standard.removeObject(forKey: Constants.savedStateUserId)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(false, forKey: Constants.savedStateLoggedIn)
+        userDefaults.removeObject(forKey: Constants.savedStateUser)
+        userDefaults.synchronize()
         self.keychain.clearAll()
     }
     

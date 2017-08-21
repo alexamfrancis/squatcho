@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="KhN-8E-eSo">
             <objects>
-                <viewController storyboardIdentifier="LoginSignupVC" id="MU8-7y-9Gi" customClass="LoginViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="MU8-7y-9Gi" customClass="LoginViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oc7-lY-TDj"/>
                         <viewControllerLayoutGuide type="bottom" id="kSb-JH-Wjf"/>
@@ -128,7 +128,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.92620444300000004" green="0.93612229820000004" blue="0.94110381600000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="wtD-6F-GY5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="2Zb-1F-cDe"/>
+                                            <segue destination="wtD-6F-GY5" kind="custom" identifier="" customClass="SWRevealViewControllerSeguePushController" id="2Zb-1F-cDe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellMenuItemIdentifier2" textLabel="hLR-XG-oWD" imageView="Udl-Gh-HcW" style="IBUITableViewCellStyleDefault" id="Dp0-DA-fFP">

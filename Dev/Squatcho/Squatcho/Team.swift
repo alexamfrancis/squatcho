@@ -23,7 +23,7 @@ class Team {
     }
     
     func addTeamMember(user:User) -> [User] {
-        user.changeStatus(to: .member)
+        user.changeStatus(to: Constants.kMember)
         teamMembers.append(user)
         return teamMembers
     }

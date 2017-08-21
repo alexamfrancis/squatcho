@@ -10,15 +10,22 @@ import Foundation
 
 public struct Constants {
     static let homeNullViewIdentifier = "HomeStatusViewController"
+    static let loginVCIdentifier = "LoginViewController"
     static let detailCellId = "DetailsTableViewCell"
     static let detailsViewControllerIdentifier = "DetailVC"
     static let selectDetailsMenuItem = "selectDetailsMenuItem"
+    static let selectHomeMenuItem = "selectHomeMenuItem"
     static let homeSegueIdentifier = "ShowHomeNonAnimated"
 
     // user default identifiers
     static let savedStateLoggedIn = "savedStateLogin"
-    static let savedStateUserId = "savedStateUserId"
+    static let savedStateUser = "savedStateUser"
 
+    // user status's
+    static let kNull = "null"
+    static let kPending = "pending"
+    static let kMember = "member"
+    static let kLeader = "leader"
     
     // url endpoints
     static let kServerURL: String = "17.217.38.0"

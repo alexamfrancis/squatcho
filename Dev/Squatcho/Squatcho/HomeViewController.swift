@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
         }
         
         // Set up which home view controller to use
-        let viewController = HomeStatusViewController(with: .null)
+        let viewController = HomeStatusViewController(with: Constants.kNull)
         addChildViewController(viewController)
         viewController.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: containerView.frame.size.height)
         containerView.addSubview(viewController.view)

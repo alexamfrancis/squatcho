@@ -30,18 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var initialViewController: UIViewController
         if !loggedIn {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+            initialViewController = storyboard.instantiateViewController(withIdentifier: Constants.loginVCIdentifier) as! LoginViewController
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "revealVC") as! SWRevealViewController
-            if defaults.object(forKey: Constants.savedStateUserId) != nil {
-                let uid  = UserDefaults.standard.string(forKey: Constants.savedStateUserId)
+            if defaults.object(forKey: Constants.savedStateUser) != nil {
+                let data  = defaults.object(forKey: Constants.savedStateUser) as! Data
+                let user = NSKeyedUnarchiver.unarchiveObject(with: data) as! User
+                SessionManager.shared.user = user
+                SessionManager.shared.startedLoggedin = true
+                print(user.id)
             } else {
-                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC") as! LoginViewController
+                initialViewController = storyboard.instantiateViewController(withIdentifier: Constants.loginVCIdentifier) as! LoginViewController
             }
         }
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
-
         return true
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

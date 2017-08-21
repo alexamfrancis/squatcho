@@ -80,7 +80,6 @@ class LoginViewController: UIViewController {
                     SessionManager.shared.storeTokens(accessToken, refreshToken: refreshToken)
                     SessionManager.shared.retrieveProfile { error in
                         DispatchQueue.main.async {
-                            // self.openRevealVC()
                             guard let id = credentials.idToken else {
                                 print("ERROR ON ID TOKEN")
                                 return
@@ -93,12 +92,28 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
                             UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
-                            self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)
+                            //self.openRevealVC()
+                            self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
+//                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//                            let detailVC: DetailsViewController = storyboard.instantiateViewController(withIdentifier: Constants.home) as! DetailsViewController
+//                            self.navigationController?.pushViewController(detailVC, animated: true)
+//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil)
+
                         }
                     }
                 }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.homeSegueIdentifier, let nextScene = segue.destination as? SWRevealViewController {
+            nextScene.pushFrontViewController(nextScene.frontViewController, animated: true)
+            //nextScene.performSegue(withIdentifier: "sw_front", sender: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
+
+        }
+    }
+
 
     fileprivate func checkToken() {
         let loadingAlert = UIAlertController.loadingAlert()
@@ -110,9 +125,9 @@ class LoginViewController: UIViewController {
                         return self.showLogin()
                     }
                     UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
-                    // self.openRevealVC()
                     self.dismiss(animated: true, completion: nil)
-                    self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)
+                    //self.openRevealVC()
+                    self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
                 }
             }
         }

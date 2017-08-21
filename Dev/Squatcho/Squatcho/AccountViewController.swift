@@ -22,7 +22,13 @@ class AccountViewController: UIViewController {
         let OKAction = UIAlertAction(title: "Yep", style: .default) { action in
             SessionManager.shared.logout()
             self.presentingViewController?.dismiss(animated: true, completion: nil)
-            self.navigationController?.popToRootViewController(animated: true)
+            if SessionManager.shared.startedLoggedin {
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let loginVC:LoginViewController = storyboard.instantiateViewController(withIdentifier: Constants.loginVCIdentifier) as! LoginViewController
+                self.navigationController?.showDetailViewController(loginVC, sender: nil)
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
         alertController.addAction(OKAction)
         

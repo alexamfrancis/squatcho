@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeStatusViewController: UIViewController {
-    var userStatus: UserStatus
+    var userStatus: String
     
     @IBOutlet weak var registerButton: UIButton!
     @IBAction func tappedRegisterButton(_ sender: Any) {
@@ -18,16 +18,18 @@ class HomeStatusViewController: UIViewController {
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
-    init(with status: UserStatus) {
+    init(with status: String) {
         userStatus = status
         switch userStatus {
-        case .null:
+        case Constants.kNull:
             super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case .leader: // UPDATE
+        case Constants.kLeader: // UPDATE
             super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case .member: // UPDATE
+        case Constants.kMember: // UPDATE
             super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case .pending: // UPDATE
+        case Constants.kPending: // UPDATE
+            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
+        default:
             super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
         }
     }
