@@ -18,8 +18,11 @@ class PymongoService {
         let params:Parameters = ["userId":uid, "email":email]
         
         Alamofire.request(Constants.getUserURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-            if let value = response.result.value as? [String:Any] {
-                if let status = value["status"] as? String {
+            print(response)
+            if let value = response.result.value {
+                print(value)
+                
+                if let val = value as? [String:Any], let status = val["status"] as? String {
                     var userStatus: UserStatus
                     switch status {
                     case "null":
@@ -33,13 +36,14 @@ class PymongoService {
                     default:
                         userStatus = UserStatus.null
                     }
-                    if let team = value["teamName"] as? String {
+                    if let val = value as? [String:Any],let team = val["teamName"] as? String {
                         let user = User(email: email, id: uid, status: userStatus, team: team)
                         SessionManager.shared.user = user
                         respond(user)
                     } else {
                         let user = User(email: email, id: uid, status: userStatus)
                         SessionManager.shared.user = user
+                        
                         respond(user)
                     }
                 }

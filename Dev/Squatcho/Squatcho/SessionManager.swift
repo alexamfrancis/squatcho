@@ -81,8 +81,10 @@ class SessionManager {
                         return
                     }
                     PymongoService.shared.getUser(uid: uid, email: email) { user in
-                        UserDefaults.standard.set(user, forKey: Constants.savedStateUser)
-                        self.user = user
+                        
+                        UserDefaults.standard.set(uid, forKey: Constants.savedStateUserId)
+                        UserDefaults.standard.synchronize()
+                        
                     }
                     
                 case .failure( _): break
@@ -93,7 +95,7 @@ class SessionManager {
     
     func logout() {
         UserDefaults.standard.set(false, forKey: Constants.savedStateLoggedIn)
-        UserDefaults.standard.removeObject(forKey: Constants.savedStateUser)
+        UserDefaults.standard.removeObject(forKey: Constants.savedStateUserId)
         self.keychain.clearAll()
     }
     

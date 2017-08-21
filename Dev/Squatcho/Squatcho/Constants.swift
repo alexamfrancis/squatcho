@@ -17,16 +17,17 @@ public struct Constants {
 
     // user default identifiers
     static let savedStateLoggedIn = "savedStateLogin"
-    static let savedStateUser = "savedStateUser"
+    static let savedStateUserId = "savedStateUserId"
 
     
     // url endpoints
-    static let getUserURL = "http://17.149.228.242:8082/user"
-    static let inviteURL = "http://17.149.228.242:8082/invite"
-    static let acceptURL = "http://17.149.228.242:8082/accept"
-    static let removeURL = "http://17.149.228.242:8082/remove"
-    static let availableUsersURL = "http://17.149.228.242:8082/availableUsers"
-    static let checkPendingURL = "http://17.149.228.242:8082/checkPending"
+    static let kServerURL: String = "17.217.38.0"
+    static let getUserURL: String = "http://\(Constants.kServerURL):8082/user"
+    static let inviteURL: String = "http://\(Constants.kServerURL):8082/invite"
+    static let acceptURL: String = "http://\(Constants.kServerURL):8082/accept"
+    static let removeURL: String = "http://\(Constants.kServerURL):8082/remove"
+    static let availableUsersURL: String = "http://\(Constants.kServerURL):8082/availableUsers"
+    static let checkPendingURL: String = "http://\(Constants.kServerURL):8082/checkPending"
 
     
     static let rule1 = Rule(title: "The Hunt", text: "When the hunt starts, your first riddle is revealed. Solve the riddle to find out where to go next. When you make it to the correct location, you will be prompted to take a team picture to unlock the next riddle. Once you solve all of the riddles, adventuring around SLO, the final riddle will give you the code to the treasure chest with $10,000. If you get there with the code first, it’s yours.")

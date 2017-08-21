@@ -91,6 +91,7 @@ class LoginViewController: UIViewController {
                             }
                             SessionManager.shared.getMetadata(idToken: id , profile: profile)
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
+                            UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
                             self.performSegue(withIdentifier: "ShowHomeNonAnimated", sender: nil)
                         }
