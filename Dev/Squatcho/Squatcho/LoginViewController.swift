@@ -92,28 +92,11 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
                             UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
-                            //self.openRevealVC()
-                            //self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
-                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                            let homeVC: HomeViewController = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
-                            self.navigationController?.pushViewController(homeVC, animated: true)
-                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
-
                         }
                     }
                 }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.homeSegueIdentifier, let nextScene = segue.destination as? SWRevealViewController {
-            //nextScene.pushFrontViewController(nextScene.frontViewController, animated: true)
-            nextScene.performSegue(withIdentifier: "sw_front", sender: nil)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
-
-        }
-    }
-
 
     fileprivate func checkToken() {
         let loadingAlert = UIAlertController.loadingAlert()
