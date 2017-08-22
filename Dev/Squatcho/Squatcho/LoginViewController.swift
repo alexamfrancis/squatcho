@@ -93,11 +93,11 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
                             //self.openRevealVC()
-                            self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
-//                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//                            let detailVC: DetailsViewController = storyboard.instantiateViewController(withIdentifier: Constants.home) as! DetailsViewController
-//                            self.navigationController?.pushViewController(detailVC, animated: true)
-//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil)
+                            //self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
+                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                            let homeVC: HomeViewController = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
+                            self.navigationController?.pushViewController(homeVC, animated: true)
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
 
                         }
                     }
@@ -107,8 +107,8 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.homeSegueIdentifier, let nextScene = segue.destination as? SWRevealViewController {
-            nextScene.pushFrontViewController(nextScene.frontViewController, animated: true)
-            //nextScene.performSegue(withIdentifier: "sw_front", sender: nil)
+            //nextScene.pushFrontViewController(nextScene.frontViewController, animated: true)
+            nextScene.performSegue(withIdentifier: "sw_front", sender: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
 
         }

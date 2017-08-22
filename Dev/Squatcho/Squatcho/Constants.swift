@@ -13,6 +13,7 @@ public struct Constants {
     static let loginVCIdentifier = "LoginViewController"
     static let detailCellId = "DetailsTableViewCell"
     static let detailsViewControllerIdentifier = "DetailVC"
+    static let homeViewControllerIdentifier = "HomeViewController"
     static let selectDetailsMenuItem = "selectDetailsMenuItem"
     static let selectHomeMenuItem = "selectHomeMenuItem"
     static let homeSegueIdentifier = "ShowHomeNonAnimated"

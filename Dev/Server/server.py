@@ -92,6 +92,7 @@ def hello():
 
 @app.route("/user", methods=['POST'])
 def user():
+    print "HEY THERE"
     body = json.loads(request.data)
     email = body['email']
     userId = body['userId']

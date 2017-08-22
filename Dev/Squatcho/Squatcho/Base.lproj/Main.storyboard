@@ -247,7 +247,7 @@
         <!--Home View Controller-->
         <scene sceneID="5z2-f1-fuC">
             <objects>
-                <viewController id="Uka-3I-ajk" customClass="HomeViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Uka-3I-ajk" customClass="HomeViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A9X-xb-j8O"/>
                         <viewControllerLayoutGuide type="bottom" id="gNu-75-hCr"/>

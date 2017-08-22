@@ -24,6 +24,10 @@ class AccountViewController: UIViewController {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             if SessionManager.shared.startedLoggedin {
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let homeVC: HomeViewController = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
+                self.navigationController?.pushViewController(homeVC, animated: true)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
+
                 let loginVC:LoginViewController = storyboard.instantiateViewController(withIdentifier: Constants.loginVCIdentifier) as! LoginViewController
                 self.navigationController?.showDetailViewController(loginVC, sender: nil)
             } else {
