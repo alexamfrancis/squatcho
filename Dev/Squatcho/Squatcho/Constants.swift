@@ -9,11 +9,14 @@
 import Foundation
 
 public struct Constants {
-    static let homeNullViewIdentifier = "HomeStatusViewController"
+    // view controller and nib names
+    static let kHomeStatusViewIdentifier = "HomeStatusViewController"
+    static let kCountdownViewIdentifier = "CountdownViewController"
+    static let kDuringEventViewIdentifier = "DuringEventViewController"
     static let loginVCIdentifier = "LoginViewController"
     static let detailCellId = "DetailsTableViewCell"
-    static let detailsViewControllerIdentifier = "DetailVC"
     static let homeViewControllerIdentifier = "HomeViewController"
+    static let detailsViewControllerIdentifier = "DetailVC"
     static let selectDetailsMenuItem = "selectDetailsMenuItem"
     static let selectHomeMenuItem = "selectHomeMenuItem"
     static let homeSegueIdentifier = "ShowHomeNonAnimated"
@@ -27,7 +30,8 @@ public struct Constants {
     static let kPending = "pending"
     static let kMember = "member"
     static let kLeader = "leader"
-    
+    static let kDuring = "during"
+
     // url endpoints
     static let kServerURL: String = "17.217.38.0"
     static let getUserURL: String = "http://\(Constants.kServerURL):8082/user"

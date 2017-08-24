@@ -20,17 +20,9 @@ class HomeStatusViewController: UIViewController {
     
     init(with status: String) {
         userStatus = status
-        switch userStatus {
-        case Constants.kNull:
-            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case Constants.kLeader: // UPDATE
-            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case Constants.kMember: // UPDATE
-            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        case Constants.kPending: // UPDATE
-            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
-        default:
-            super.init(nibName: Constants.homeNullViewIdentifier, bundle: nil)
+        super.init(nibName: Constants.kHomeStatusViewIdentifier, bundle: nil)
+        if(userStatus == Constants.kPending) {
+            presentPendingAlert()
         }
     }
     
@@ -55,7 +47,23 @@ class HomeStatusViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func presentPendingAlert() {
+        let alertController = UIAlertController(title: "You have an invitation waiting.", message: "An existing team leader has invited you to join their team.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel) { action in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "I'm interested...", style: .default) { action in
+            let newViewController = HookPageViewController()
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+    }
     /*
     // MARK: - Navigation
 

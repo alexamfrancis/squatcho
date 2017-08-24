@@ -145,6 +145,9 @@
                                     <state key="normal" title="Join Existing Team">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="tappedJoinExisting:" destination="-1" eventType="touchUpInside" id="U87-cL-sn5"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>

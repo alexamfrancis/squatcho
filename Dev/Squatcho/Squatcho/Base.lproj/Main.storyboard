@@ -22,29 +22,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scope_squatcho" translatesAutoresizingMaskIntoConstraints="NO" id="cep-V4-XZp">
+                                <rect key="frame" x="37" y="183.5" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fcx-qf-UgB"/>
+                                    <constraint firstAttribute="height" constant="300" id="tkh-L9-F1x"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLN-LK-umO">
-                                <rect key="frame" x="112.5" y="308.5" width="150" height="50"/>
+                                <rect key="frame" x="37" y="513.5" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.2156862745" green="0.38823529410000002" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GGH-DD-hes"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="X9Z-HX-QoH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="X9Z-HX-QoH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Login or Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="showLoginController:" destination="MU8-7y-9Gi" eventType="touchUpInside" id="si9-P6-tQA"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="N7B-ty-tWp">
+                                <rect key="frame" x="37" y="75" width="300" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="H5c-Nu-wAy"/>
+                                    <constraint firstAttribute="height" constant="78" id="J6k-2z-JRB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.36862745099999999" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.3676256537" green="0.64926189180000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xLN-LK-umO" firstAttribute="centerY" secondItem="GpE-05-4Di" secondAttribute="centerY" id="dg0-oa-O9c"/>
-                            <constraint firstItem="xLN-LK-umO" firstAttribute="centerX" secondItem="GpE-05-4Di" secondAttribute="centerX" id="hgI-N9-ngp"/>
+                            <constraint firstItem="N7B-ty-tWp" firstAttribute="centerX" secondItem="GpE-05-4Di" secondAttribute="centerX" id="1eW-0b-aUF"/>
+                            <constraint firstItem="cep-V4-XZp" firstAttribute="top" secondItem="N7B-ty-tWp" secondAttribute="bottom" constant="30.5" id="ACY-Te-S64"/>
+                            <constraint firstItem="cep-V4-XZp" firstAttribute="centerY" secondItem="GpE-05-4Di" secondAttribute="centerY" id="FVU-6q-3Qt"/>
+                            <constraint firstItem="cep-V4-XZp" firstAttribute="centerX" secondItem="GpE-05-4Di" secondAttribute="centerX" id="jSw-mK-kN8"/>
+                            <constraint firstItem="xLN-LK-umO" firstAttribute="centerX" secondItem="GpE-05-4Di" secondAttribute="centerX" id="nZB-Zj-AbZ"/>
+                            <constraint firstItem="xLN-LK-umO" firstAttribute="top" secondItem="cep-V4-XZp" secondAttribute="bottom" constant="30" id="rVB-oU-qlf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginOrSignUpButton" destination="xLN-LK-umO" id="Mm3-hd-zMB"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowHomeNonAnimated" modalTransitionStyle="flipHorizontal" id="cBm-qu-y9n"/>
                     </connections>
                 </viewController>
@@ -544,8 +563,10 @@
         <image name="account" width="600" height="597"/>
         <image name="details" width="600" height="600"/>
         <image name="home" width="600" height="600"/>
+        <image name="logo" width="172" height="40"/>
         <image name="map" width="600" height="600"/>
         <image name="menu" width="22" height="22"/>
+        <image name="scope_squatcho" width="904" height="904"/>
         <image name="team" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>

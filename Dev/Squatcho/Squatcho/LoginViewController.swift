@@ -11,48 +11,15 @@ import Auth0
 import SimpleKeychain
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var loginOrSignUpButton: UIButton!
     @IBAction func showLoginController(_ sender: UIButton) {
         self.showLogin()
-//        guard let clientInfo = plistValues(bundle: Bundle.main) else { return }
-//        Auth0
-//            .webAuth()
-//            .audience("https://" + clientInfo.domain + "/userinfo")
-//            .start {
-//                switch $0 {
-//                case .failure(let error):
-//                    print("Error: \(error)")
-//                case .success(let credentials):
-//                    guard let accessToken = credentials.accessToken else { return }
-//                    let keychain = A0SimpleKeychain(service: "Auth0")
-//                    keychain.setString(accessToken, forKey: "access_token")
-//
-//                    self.openRevealVC(accessToken)
-//
-//                }
-//        }
-//
-//        Auth0
-//            .webAuth()
-//            .scope("openid profile offline_access")
-//            .start {
-//                switch $0 {
-//                case .failure(let error):
-//                    // Handle the error
-//                    print("Error: \(error)")
-//                case .success(let credentials):
-//                    guard let accessToken = credentials.accessToken, let refreshToken = credentials.refreshToken else { return }
-//                    let keychain = A0SimpleKeychain(service: "Auth0")
-//                    keychain.setString(accessToken, forKey: "access_token")
-//                    keychain.setString(refreshToken, forKey: "refresh_token")
-//                }
-//        }
-//
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loginOrSignUpButton.layer.cornerRadius = 10
+        loginOrSignUpButton.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,6 +59,13 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
                             UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
+                            //self.openRevealVC()
+                            self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
+//                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//                            let homeVC: HomeViewController = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
+//                            self.navigationController?.pushViewController(homeVC, animated: true)
+//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
+
                         }
                     }
                 }

@@ -36,6 +36,8 @@
 		A2A023171F464F8D00DD3AD4 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */; };
 		A2A023181F464F8D00DD3AD4 /* CountdownViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */; };
 		A2BD4D821F259CC900F3D41F /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD4D811F259CC900F3D41F /* UIImage+.swift */; };
+		A2CA97B71F4D0CDA00B2D574 /* DuringEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA97B51F4D0CDA00B2D574 /* DuringEventViewController.swift */; };
+		A2CA97B81F4D0CDA00B2D574 /* DuringEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CA97B61F4D0CDA00B2D574 /* DuringEventViewController.xib */; };
 		A2D8D5831F3D125C00E85ACF /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2D8D5821F3D125C00E85ACF /* Auth0.plist */; };
 		A2D8D5851F3D301500E85ACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8D5841F3D301500E85ACF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountdownViewController.xib; sourceTree = "<group>"; };
 		A2BD4D811F259CC900F3D41F /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		A2CA97B51F4D0CDA00B2D574 /* DuringEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuringEventViewController.swift; sourceTree = "<group>"; };
+		A2CA97B61F4D0CDA00B2D574 /* DuringEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DuringEventViewController.xib; sourceTree = "<group>"; };
 		A2D8D5821F3D125C00E85ACF /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		A2D8D5841F3D301500E85ACF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,10 +153,12 @@
 				A27B88131F20593B00484C13 /* HomeViewController.swift */,
 				A280AA761F26D301009A381F /* HomeStatusViewController.swift */,
 				A280AA771F26D301009A381F /* HomeStatusViewController.xib */,
-				A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */,
-				A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */,
 				A20DDD311F32930700F96443 /* HookPageViewController.swift */,
 				A20DDD321F32930700F96443 /* HookPageViewController.xib */,
+				A2A023151F464F8D00DD3AD4 /* CountdownViewController.swift */,
+				A2A023161F464F8D00DD3AD4 /* CountdownViewController.xib */,
+				A2CA97B51F4D0CDA00B2D574 /* DuringEventViewController.swift */,
+				A2CA97B61F4D0CDA00B2D574 /* DuringEventViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CA97B81F4D0CDA00B2D574 /* DuringEventViewController.xib in Resources */,
 				A28EDF491F20553300BD97D4 /* LaunchScreen.storyboard in Resources */,
 				A2D8D5831F3D125C00E85ACF /* Auth0.plist in Resources */,
 				A28EDF461F20553300BD97D4 /* Assets.xcassets in Resources */,
@@ -340,6 +347,7 @@
 				A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */,
 				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
 				A240666E1F43A02E0032D39B /* PymongoService.swift in Sources */,
+				A2CA97B71F4D0CDA00B2D574 /* DuringEventViewController.swift in Sources */,
 				A23F09901F3391D4007EE38C /* SessionManager.swift in Sources */,
 				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,

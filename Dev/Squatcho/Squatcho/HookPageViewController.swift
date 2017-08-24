@@ -25,6 +25,15 @@ class HookPageViewController: UIViewController {
     @IBAction func tappedCreateNew(_ sender: Any) {
         UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
     }
+    @IBAction func tappedJoinExisting(_ sender: UIButton) {
+        if let status = SessionManager.shared.user?.userStatus, status == Constants.kPending {
+            if let team = SessionManager.shared.user?.teamName {
+                presentJoinAlert(team: team)
+            } else {
+                presentJoinAlert(team: "UNKNOWN_TEAM_NAME")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +55,41 @@ class HookPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func presentJoinAlert(team: String) {
+        let alertController = UIAlertController(title: "Join \(team).", message: "Click join to become a part of this team.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Join, DAMN IT", style: .default) { action in
+            PymongoService.shared.acceptInvitation()
+            let newViewController = MyTeamViewController()
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+    }
+
+    func presentNoInvitationAlert() {
+        let alertController = UIAlertController(title: "You don't have any invitations.", message: "A team leader must invite you to join their team or you can create your own team!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel) { action in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Create My Own Team", style: .default) { action in
+            UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+    }
 
     /*
     // MARK: - Navigation

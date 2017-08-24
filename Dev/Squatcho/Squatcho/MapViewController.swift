@@ -53,8 +53,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         // Create the polygon, and assign it to the map.
         let polygon = GMSPolygon(path: bounds)
-        polygon.fillColor = UIColor(red: 0.25, green: 0, blue: 0, alpha: 0.05);
-        polygon.strokeColor = .black
+        polygon.fillColor = UIColor(red: 250/255, green: 0, blue: 0, alpha: 0.05);
+        polygon.strokeColor = UIColor(red: 245/255, green: 0, blue: 0, alpha: 1);
         polygon.strokeWidth = 2
         polygon.map = mapView
     }

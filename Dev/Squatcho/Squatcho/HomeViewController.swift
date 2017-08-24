@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var locationTitleBar: UINavigationItem!
     @IBOutlet weak var containerView: UIView!
+    var userStatus = Constants.kNull
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,22 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
         // Set up which home view controller to use
-        let viewController = HomeStatusViewController(with: Constants.kNull)
+        var viewController: UIViewController
+        if let status = SessionManager.shared.user?.userStatus {
+            userStatus = status
+            if userStatus == Constants.kNull {
+                viewController = HomeStatusViewController(with: userStatus)
+            } else if userStatus == Constants.kDuring {
+                viewController = DuringEventViewController()
+            } else {
+                viewController = CountdownViewController()
+            }
+        } else {
+            viewController = HomeStatusViewController(with: userStatus)
+        }
+
+        // Set up which home view controller to use
         addChildViewController(viewController)
         viewController.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: containerView.frame.size.height)
         containerView.addSubview(viewController.view)
