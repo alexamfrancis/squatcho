@@ -92,7 +92,6 @@ def hello():
 
 @app.route("/user", methods=['POST'])
 def user():
-    print "HEY THERE"
     body = json.loads(request.data)
     email = body['email']
     userId = body['userId']
@@ -100,7 +99,7 @@ def user():
     #check if user exists already
     obj = userModel.find_one({'userId':userId})
     if obj is not None: # user already exists
-        print dumps(obj)
+        print "WE EXIST FUCK"
         return dumps(obj)
     else:
         #new user!
