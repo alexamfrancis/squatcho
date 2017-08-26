@@ -21,9 +21,6 @@ class HomeStatusViewController: UIViewController {
     init(with status: String) {
         userStatus = status
         super.init(nibName: Constants.kHomeStatusViewIdentifier, bundle: nil)
-        if(userStatus == Constants.kPending) {
-            presentPendingAlert()
-        }
     }
     
     required init?(coder: NSCoder) {
@@ -34,12 +31,9 @@ class HomeStatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerButton.layer.cornerRadius = 10
-        registerButton.clipsToBounds = true
-        //        registerButton.layer.masksToBounds = true
-        //view.backgroundColor = UIColor.sqGreenLight
-        //view.layer.backgroundColor = UIColor.lightGray as! CGColor
-
-        // Do any additional setup after loading the view.
+        if(userStatus == Constants.kPending) {
+            presentPendingAlert()
+        }
     }
 
     override func didReceiveMemoryWarning() {

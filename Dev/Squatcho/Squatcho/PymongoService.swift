@@ -60,7 +60,10 @@ class PymongoService {
     func acceptInvitation() {
         if SessionManager.shared.user?.userStatus == Constants.kPending, let team = SessionManager.shared.user?.teamName {
             let params:Parameters = ["userId":SessionManager.shared.user!.id, "teamName": team]
-            Alamofire.request(Constants.acceptURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in print(response.result.value ?? "ERROR: NO RETURN VALUE") }
+            Alamofire.request(Constants.acceptURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+                SessionManager.shared.user?.userStatus = Constants.kMember
+                print(response.result.value ?? "ERROR: NO RETURN VALUE")
+            }
         }
     }
     

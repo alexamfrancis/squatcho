@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate {
         var viewController: UIViewController
         if let status = SessionManager.shared.user?.userStatus {
             userStatus = status
-            if userStatus == Constants.kNull {
+            if userStatus == Constants.kNull || userStatus == Constants.kPending {
                 viewController = HomeStatusViewController(with: userStatus)
             } else if userStatus == Constants.kDuring {
                 viewController = DuringEventViewController()

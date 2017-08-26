@@ -36,8 +36,8 @@ def addMember(userId, teamName):
     memberIds = result['memberIds']
     if userId in pendingIds: pendingIds.remove(userId)
     memberIds.append(userId)
-    response = teamModel.update_one({'userId':uid}, {'$set': {'pendingIds':pendingIds, 'memberIds':memberIds}})
-    return dumps(response)
+    response = teamModel.update_one({'teamName':teamName}, {'$set': {'pendingIds':pendingIds, 'memberIds':memberIds}})
+    return 'SUCCESS! You joined a team.', teamName
 
 # only leaders can do this, userId is the id of the member to be removed
 def removeMember(userId, teamName):
@@ -47,8 +47,8 @@ def removeMember(userId, teamName):
     memberIds = result['memberIds']
     if userId in pendingIds: pendingIds.remove(userId)
     if userId in memberIds: memberIds.remove(userId)
-    response = teamModel.update_one({'userId':uid}, {'$set': {'pendingIds':pendingIds, 'memberIds':memberIds}})
-    return dumps(response)
+    response = teamModel.update_one({'teamName':teamName}, {'$set': {'pendingIds':pendingIds, 'memberIds':memberIds}})
+    return 'SUCCESS! You have removed yourself from the team.', userId
 
 # only leaders can do this, userId is the id of the member
 def inviteMember(userId, teamName):
@@ -56,8 +56,8 @@ def inviteMember(userId, teamName):
     result = teamModel.find_one({'teamName':teamName})
     pendingIds = result['pendingIds']
     pendingIds.append(userId)
-    response = teamModel.update_one({'userId':uid}, {'$set': {'pendingIds':pendingIds}})
-    return dumps(response)
+    response = teamModel.update_one({'teamName':teamName}, {'$set': {'pendingIds':pendingIds}})
+    return 'SUCCESS! You invited a team member.', userId
 
 # called when a leader pays for their team, userId is the id of the leader
 def addTeam(userId, teamName):
@@ -77,10 +77,10 @@ def checkUnique(teamName):
     return False
 
 def updateUserStatus(userId, status):
-    userModel.update_one({'userId':uid}, {'$set': {'status':status}})
+    userModel.update_one({'userId':userId}, {'$set': {'status':status}})
 
 def updateUserTeam(userId, teamName):
-    userModel.update_one({'userId':uid}, {'$set': {'teamName':teamName}})
+    userModel.update_one({'userId':userId}, {'$set': {'teamName':teamName}})
 
 
 app = Flask(__name__)
@@ -99,7 +99,6 @@ def user():
     #check if user exists already
     obj = userModel.find_one({'userId':userId})
     if obj is not None: # user already exists
-        print "WE EXIST FUCK"
         return dumps(obj)
     else:
         #new user!
@@ -116,8 +115,7 @@ def accept():
     uid = body['userId']
     updateUserStatus(uid, 'member')
     response = userModel.find_one({'userId':uid})
-    addMember(uid, response['team'])
-    return dumps(response)
+    return addMember(uid, response['teamName'])
 
 @app.route("/invite", methods=['POST'])
 def invite():

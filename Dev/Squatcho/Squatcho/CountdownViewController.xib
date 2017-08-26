@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountdownViewController" customModule="Squatcho" customModuleProvider="target">
             <connections>
+                <outlet property="moreInfoButton" destination="r5K-H9-daE" id="jpA-Dy-tJL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,6 +66,9 @@
                     <state key="normal" title="See Event Details">
                         <color key="titleColor" red="0.2156862745" green="0.38823529410000002" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="tappedMoreInfo:" destination="-1" eventType="touchUpInside" id="vee-k9-5eM"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HUH-3y-hST">
                     <rect key="frame" x="44.5" y="300" width="285" height="255"/>

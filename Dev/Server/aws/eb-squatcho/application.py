@@ -96,7 +96,7 @@ def user():
     body = json.loads(request.data)
     email = body['email']
     userId = body['userId']
-    print "GOT EMAIL AND USERID", email, userId
+    print email, userId
     #check if user exists already
     obj = userModel.find_one({'userId':userId})
     if obj is not None: # user already exists

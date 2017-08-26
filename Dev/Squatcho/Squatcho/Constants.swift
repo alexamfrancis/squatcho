@@ -17,10 +17,15 @@ public struct Constants {
     static let detailCellId = "DetailsTableViewCell"
     static let homeViewControllerIdentifier = "HomeViewController"
     static let detailsViewControllerIdentifier = "DetailVC"
-    static let selectDetailsMenuItem = "selectDetailsMenuItem"
-    static let selectHomeMenuItem = "selectHomeMenuItem"
+    static let kMyTeamViewControllerIdentifier = "MyTeamViewController"
     static let homeSegueIdentifier = "ShowHomeNonAnimated"
 
+    // menu selectors
+    static let selectDetailsMenuItem = "selectDetailsMenuItem"
+    static let selectHomeMenuItem = "selectHomeMenuItem"
+    static let selectTeamMenuItem = "selectTeamMenuItem"
+
+    
     // user default identifiers
     static let savedStateLoggedIn = "savedStateLogin"
     static let savedStateUser = "savedStateUser"

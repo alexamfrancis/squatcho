@@ -32,6 +32,8 @@ class HookPageViewController: UIViewController {
             } else {
                 presentJoinAlert(team: "UNKNOWN_TEAM_NAME")
             }
+        } else {
+            presentNoInvitationAlert()
         }
     }
     
@@ -62,10 +64,13 @@ class HookPageViewController: UIViewController {
         }
         alertController.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "Join, DAMN IT", style: .default) { action in
+        let OKAction = UIAlertAction(title: "Join \(team)", style: .default) { action in
             PymongoService.shared.acceptInvitation()
-            let newViewController = MyTeamViewController()
-            self.navigationController?.pushViewController(newViewController, animated: true)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let teamVC = storyboard.instantiateViewController(withIdentifier: Constants.kMyTeamViewControllerIdentifier) as! MyTeamViewController
+            self.navigationController?.pushViewController(teamVC, animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectTeamMenuItem), object: nil)
+
         }
         alertController.addAction(OKAction)
         

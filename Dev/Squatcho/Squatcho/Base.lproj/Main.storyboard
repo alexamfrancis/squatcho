@@ -465,7 +465,7 @@
         <!--My Team-->
         <scene sceneID="n5W-7i-suv">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q91-UY-c7q" customClass="MyTeamViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q91-UY-c7q" customClass="MyTeamViewController" customModule="Squatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="77A-l6-6hz"/>
                         <viewControllerLayoutGuide type="bottom" id="1QK-Gv-NXt"/>

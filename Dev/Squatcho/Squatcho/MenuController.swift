@@ -19,6 +19,7 @@ class Menu {
     init() {
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil, queue: nil, using: selectDetails)
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectHomeMenuItem), object: nil, queue: nil, using: selectHome)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: Constants.selectTeamMenuItem), object: nil, queue: nil, using: selectTeam)
     }
     
     func selectDetails(notification:Notification) {
@@ -37,6 +38,16 @@ class Menu {
                 items[i].selected = false
             }
             if items[i].text == "Home" {
+                items[i].selected = true
+            }
+        }
+    }
+    func selectTeam(notification:Notification) {
+        for i in 0...items.count-1 {
+            if items[i].selected {
+                items[i].selected = false
+            }
+            if items[i].text == "Team" {
                 items[i].selected = true
             }
         }

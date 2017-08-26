@@ -9,6 +9,14 @@
 import UIKit
 
 class CountdownViewController: UIViewController {
+    @IBOutlet weak var moreInfoButton: UIButton!
+    @IBAction func tappedMoreInfo(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let detailVC: DetailsViewController = storyboard.instantiateViewController(withIdentifier: Constants.detailsViewControllerIdentifier) as! DetailsViewController
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectDetailsMenuItem), object: nil)
+    }
+    
     init() {
         super.init(nibName: Constants.kCountdownViewIdentifier, bundle: nil)
     }
@@ -17,6 +25,8 @@ class CountdownViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        moreInfoButton.layer.cornerRadius = 8
+        moreInfoButton.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }

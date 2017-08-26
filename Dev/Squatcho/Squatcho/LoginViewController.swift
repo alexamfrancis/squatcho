@@ -59,13 +59,7 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
                             UserDefaults.standard.synchronize()
                             self.dismiss(animated: true, completion: nil)
-                            //self.openRevealVC()
                             self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
-//                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//                            let homeVC: HomeViewController = storyboard.instantiateViewController(withIdentifier: Constants.homeViewControllerIdentifier) as! HomeViewController
-//                            self.navigationController?.pushViewController(homeVC, animated: true)
-//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.selectHomeMenuItem), object: nil)
-
                         }
                     }
                 }
