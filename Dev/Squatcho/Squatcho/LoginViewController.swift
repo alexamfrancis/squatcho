@@ -55,11 +55,12 @@ class LoginViewController: UIViewController {
                                 print("ERROR ON PROFILE")
                                 return
                             }
-                            SessionManager.shared.getMetadata(idToken: id , profile: profile)
-                            UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
-                            UserDefaults.standard.synchronize()
-                            self.dismiss(animated: true, completion: nil)
-                            self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
+                            SessionManager.shared.getMetadata(idToken: id , profile: profile) { user in
+                                UserDefaults.standard.set(true, forKey: Constants.savedStateLoggedIn)
+                                UserDefaults.standard.synchronize()
+                                self.dismiss(animated: true, completion: nil)
+                                self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: nil)
+                            }
                         }
                     }
                 }

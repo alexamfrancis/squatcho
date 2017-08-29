@@ -25,6 +25,10 @@
 		A27B881D1F205BF400484C13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B881B1F205BF400484C13 /* AccountViewController.swift */; };
 		A27B88211F2130CA00484C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88201F2130CA00484C13 /* User.swift */; };
 		A27B88241F21522400484C13 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B88231F21522400484C13 /* Team.swift */; };
+		A27E007D1F54AD5D0077EC8A /* TeamLeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E007B1F54AD5D0077EC8A /* TeamLeaderViewController.swift */; };
+		A27E007E1F54AD5D0077EC8A /* TeamLeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27E007C1F54AD5D0077EC8A /* TeamLeaderViewController.xib */; };
+		A27E00821F54AF630077EC8A /* TeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E00801F54AF630077EC8A /* TeamMemberViewController.swift */; };
+		A27E00831F54AF630077EC8A /* TeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27E00811F54AF630077EC8A /* TeamMemberViewController.xib */; };
 		A280AA781F26D301009A381F /* HomeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280AA761F26D301009A381F /* HomeStatusViewController.swift */; };
 		A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A280AA771F26D301009A381F /* HomeStatusViewController.xib */; };
 		A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280AA7B1F26D3D6009A381F /* Constants.swift */; };
@@ -65,6 +69,10 @@
 		A27B881B1F205BF400484C13 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A27B88201F2130CA00484C13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A27B88231F21522400484C13 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A27E007B1F54AD5D0077EC8A /* TeamLeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLeaderViewController.swift; sourceTree = "<group>"; };
+		A27E007C1F54AD5D0077EC8A /* TeamLeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamLeaderViewController.xib; sourceTree = "<group>"; };
+		A27E00801F54AF630077EC8A /* TeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberViewController.swift; sourceTree = "<group>"; };
+		A27E00811F54AF630077EC8A /* TeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberViewController.xib; sourceTree = "<group>"; };
 		A280AA761F26D301009A381F /* HomeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStatusViewController.swift; sourceTree = "<group>"; };
 		A280AA771F26D301009A381F /* HomeStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeStatusViewController.xib; sourceTree = "<group>"; };
 		A280AA7B1F26D3D6009A381F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -127,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A280AA7A1F26D311009A381F /* Home */,
-				A27B88151F2059FB00484C13 /* MyTeamViewController.swift */,
+				A27E007F1F54AD650077EC8A /* Team */,
 				A27B88171F205A3400484C13 /* MapViewController.swift */,
 				A27B88191F205BBA00484C13 /* DetailsViewController.swift */,
 				A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */,
@@ -145,6 +153,18 @@
 				A267076F1F216CDB0017F859 /* Event.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A27E007F1F54AD650077EC8A /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				A27B88151F2059FB00484C13 /* MyTeamViewController.swift */,
+				A27E007B1F54AD5D0077EC8A /* TeamLeaderViewController.swift */,
+				A27E007C1F54AD5D0077EC8A /* TeamLeaderViewController.xib */,
+				A27E00801F54AF630077EC8A /* TeamMemberViewController.swift */,
+				A27E00811F54AF630077EC8A /* TeamMemberViewController.xib */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 		A280AA7A1F26D311009A381F /* Home */ = {
@@ -284,7 +304,9 @@
 				A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */,
 				A2A023181F464F8D00DD3AD4 /* CountdownViewController.xib in Resources */,
 				A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */,
+				A27E00831F54AF630077EC8A /* TeamMemberViewController.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
+				A27E007E1F54AD5D0077EC8A /* TeamLeaderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +370,11 @@
 				A27B88121F20591F00484C13 /* MenuController.swift in Sources */,
 				A240666E1F43A02E0032D39B /* PymongoService.swift in Sources */,
 				A2CA97B71F4D0CDA00B2D574 /* DuringEventViewController.swift in Sources */,
+				A27E007D1F54AD5D0077EC8A /* TeamLeaderViewController.swift in Sources */,
 				A23F09901F3391D4007EE38C /* SessionManager.swift in Sources */,
 				A280AA7C1F26D3D6009A381F /* Constants.swift in Sources */,
 				A28EDF3F1F20553300BD97D4 /* AppDelegate.swift in Sources */,
+				A27E00821F54AF630077EC8A /* TeamMemberViewController.swift in Sources */,
 				A27B881A1F205BBA00484C13 /* DetailsViewController.swift in Sources */,
 				A206B21E1F33EBE300CF0EF6 /* DetailsTableViewCell.swift in Sources */,
 				A27B880F1F2057AC00484C13 /* SWRevealViewController.m in Sources */,

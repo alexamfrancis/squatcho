@@ -11,6 +11,10 @@ import SimpleKeychain
 
 class AccountViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet weak var changePasswordButton: UIButton!
+    @IBAction func tappedChangePassword(_ sender: UIButton) {
+        //presentChangePasswordAlert()
+    }
     
     @IBAction func tappedLogOut() {
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
@@ -57,6 +61,7 @@ class AccountViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
     
 
     /*
@@ -67,6 +72,54 @@ class AccountViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
+    
+    func presentChangePasswordAlert() {
+        let email = SessionManager.shared.user?.emailAddress
+        let alertController = UIAlertController(title: "Are you sure you want to change your password?", message: "An email will be sent to \(email) to update your password.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Continue", style: .default) { action in
+            let headers = ["content-type": "application/json"]
+            let parameters = [
+                "client_id": "1WUcSphbEoIxNP26LNJZvw1nL4L3fUeK",
+                "email": email,
+                "connection": "Username-Password-Authentication"
+            ]
+            
+            let postData = JSONSerialization.dataWithJSONObject(parameters, options: nil, error: nil)
+            let data = JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions. )
+            
+            var request = NSMutableURLRequest(URL: NSURL(string: "https://squatcho.auth0.com/dbconnections/change_password")!,
+                                              cachePolicy: .UseProtocolCachePolicy,
+                                              timeoutInterval: 10.0)
+            request.HTTPMethod = "POST"
+            request.allHTTPHeaderFields = headers
+            request.HTTPBody = postData
+            
+            let session = NSURLSession.sharedSession()
+            let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    println(error)
+                } else {
+                    let httpResponse = response as? NSHTTPURLResponse
+                    println(httpResponse)
+                }
+            })
+            
+            dataTask.resume()
 
+            UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+
+    }
 }
+  */

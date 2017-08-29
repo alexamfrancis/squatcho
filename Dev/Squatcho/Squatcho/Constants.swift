@@ -38,6 +38,7 @@ public struct Constants {
     static let kDuring = "during"
 
     // url endpoints
+    //static let kServerURL: String = "192.168.1.31"
     static let kServerURL: String = "17.217.38.0"
     static let getUserURL: String = "http://\(Constants.kServerURL):8082/user"
     static let inviteURL: String = "http://\(Constants.kServerURL):8082/invite"

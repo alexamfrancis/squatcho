@@ -69,7 +69,7 @@ class SessionManager {
         }
     }
     
-    func getMetadata(idToken: String, profile: UserInfo) {
+    func getMetadata(idToken: String, profile: UserInfo, respond: @escaping (_: User) -> Void) {
         Auth0
             .users(token: idToken)
             .get(profile.sub, fields: ["user_id", "email"], include: true)
@@ -82,7 +82,7 @@ class SessionManager {
                         return
                     }
                     PymongoService.shared.getUser(uid: uid, email: email) { user in
-                        
+                        respond(user)
                     }
                     
                 case .failure( _): break

@@ -473,7 +473,22 @@
                     <view key="view" contentMode="scaleToFill" id="oiE-B8-39E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7M-hJ-G3N">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.60392159219999997" green="0.81960785390000002" blue="0.38039216399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="6Sn-oC-0N0" kind="embed" id="9Tr-P7-ITw"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C7M-hJ-G3N" firstAttribute="top" secondItem="77A-l6-6hz" secondAttribute="bottom" id="NGp-dJ-QRj"/>
+                            <constraint firstItem="1QK-Gv-NXt" firstAttribute="top" secondItem="C7M-hJ-G3N" secondAttribute="bottom" id="Y83-zt-97s"/>
+                            <constraint firstItem="C7M-hJ-G3N" firstAttribute="leading" secondItem="oiE-B8-39E" secondAttribute="leading" id="kqS-me-384"/>
+                            <constraint firstAttribute="trailing" secondItem="C7M-hJ-G3N" secondAttribute="trailing" id="owy-G2-0iz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Team" id="NR1-pW-nYe">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="JHR-D0-v4p">
@@ -481,6 +496,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="C7M-hJ-G3N" id="7ob-fH-aME"/>
                         <outlet property="menuButton" destination="JHR-D0-v4p" id="EVq-hh-3RJ"/>
                     </connections>
                 </viewController>
@@ -524,6 +540,19 @@
                                     <action selector="tappedLogOut" destination="23d-IN-Jbi" eventType="touchUpInside" id="bW0-Jv-imN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-mR-Oc0">
+                                <rect key="frame" x="82" y="190" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change Password"/>
+                                <connections>
+                                    <action selector="tappedChangePassword:" destination="23d-IN-Jbi" eventType="touchUpInside" id="mLU-UN-0GC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-W9-ToO">
+                                <rect key="frame" x="164" y="403" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Contact Us"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -533,6 +562,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changePasswordButton" destination="0pS-mR-Oc0" id="yIh-dX-iMv"/>
                         <outlet property="menuButton" destination="59R-Ao-LoP" id="iiP-02-WoU"/>
                     </connections>
                 </viewController>
@@ -557,6 +587,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMP-S5-N3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3559" y="-799"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8L6-VN-LwE">
+            <objects>
+                <viewController id="6Sn-oC-0N0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQ9-SY-uRH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kmx-km-D9b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yYQ-Gi-y6H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dz-hR-VrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3558" y="-99"/>
         </scene>
     </scenes>
     <resources>
