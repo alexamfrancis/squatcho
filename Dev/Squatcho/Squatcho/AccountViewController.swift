@@ -10,6 +10,9 @@ import UIKit
 import SimpleKeychain
 
 class AccountViewController: UIViewController {
+    var email = SessionManager.shared.user?.emailAddress
+
+    @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var changePasswordButton: UIButton!
     @IBAction func tappedChangePassword(_ sender: UIButton) {
@@ -53,7 +56,9 @@ class AccountViewController: UIViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+        if let address = email {
+          emailAddressLabel.text = address
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -75,7 +80,6 @@ class AccountViewController: UIViewController {
  
     
     func presentChangePasswordAlert() {
-        let email = SessionManager.shared.user?.emailAddress
         let alertController = UIAlertController(title: "Are you sure you want to change your password?", message: "An email will be sent to \(email) to update your password.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
             // ...

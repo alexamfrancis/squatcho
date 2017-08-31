@@ -26,14 +26,16 @@ class HookPageViewController: UIViewController {
         UIApplication.shared.open(NSURL(string:"http://www.squatcho.com/")! as URL, options: [:], completionHandler: nil)
     }
     @IBAction func tappedJoinExisting(_ sender: UIButton) {
-        if let status = SessionManager.shared.user?.userStatus, status == Constants.kPending {
-            if let team = SessionManager.shared.user?.teamName {
+        if let status = SessionManager.shared.user?.userStatus, status == Constants.kPending, let team = SessionManager.shared.user?.teamName {
                 presentJoinAlert(team: team)
-            } else {
-                presentJoinAlert(team: "UNKNOWN_TEAM_NAME")
+                return
             }
-        } else {
-            presentNoInvitationAlert()
+        PymongoService.shared.checkPending() { isPending in
+            if isPending, let team = SessionManager.shared.user?.teamName {
+                self.presentJoinAlert(team: team)
+            } else {
+                self.presentNoInvitationAlert()
+            }
         }
     }
     

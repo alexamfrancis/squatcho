@@ -11,6 +11,8 @@
 		A206B21E1F33EBE300CF0EF6 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */; };
 		A20DDD331F32930700F96443 /* HookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DDD311F32930700F96443 /* HookPageViewController.swift */; };
 		A20DDD341F32930700F96443 /* HookPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20DDD321F32930700F96443 /* HookPageViewController.xib */; };
+		A234C3231F57942A00375D55 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234C3211F57942A00375D55 /* TeamTableViewCell.swift */; };
+		A234C3241F57942A00375D55 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A234C3221F57942A00375D55 /* TeamTableViewCell.xib */; };
 		A23F09901F3391D4007EE38C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F098F1F3391D4007EE38C /* SessionManager.swift */; };
 		A240666E1F43A02E0032D39B /* PymongoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240666D1F43A02E0032D39B /* PymongoService.swift */; };
 		A267076E1F215C520017F859 /* Riddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267076D1F215C520017F859 /* Riddle.swift */; };
@@ -53,6 +55,8 @@
 		A206B21D1F33EBE300CF0EF6 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		A20DDD311F32930700F96443 /* HookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookPageViewController.swift; sourceTree = "<group>"; };
 		A20DDD321F32930700F96443 /* HookPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HookPageViewController.xib; sourceTree = "<group>"; };
+		A234C3211F57942A00375D55 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		A234C3221F57942A00375D55 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		A23F098F1F3391D4007EE38C /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A240666D1F43A02E0032D39B /* PymongoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PymongoService.swift; sourceTree = "<group>"; };
 		A267076D1F215C520017F859 /* Riddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riddle.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				A27B88151F2059FB00484C13 /* MyTeamViewController.swift */,
 				A27E007B1F54AD5D0077EC8A /* TeamLeaderViewController.swift */,
 				A27E007C1F54AD5D0077EC8A /* TeamLeaderViewController.xib */,
+				A234C3211F57942A00375D55 /* TeamTableViewCell.swift */,
+				A234C3221F57942A00375D55 /* TeamTableViewCell.xib */,
 				A27E00801F54AF630077EC8A /* TeamMemberViewController.swift */,
 				A27E00811F54AF630077EC8A /* TeamMemberViewController.xib */,
 			);
@@ -305,6 +311,7 @@
 				A2A023181F464F8D00DD3AD4 /* CountdownViewController.xib in Resources */,
 				A280AA791F26D301009A381F /* HomeStatusViewController.xib in Resources */,
 				A27E00831F54AF630077EC8A /* TeamMemberViewController.xib in Resources */,
+				A234C3241F57942A00375D55 /* TeamTableViewCell.xib in Resources */,
 				A28EDF441F20553300BD97D4 /* Main.storyboard in Resources */,
 				A27E007E1F54AD5D0077EC8A /* TeamLeaderViewController.xib in Resources */,
 			);
@@ -381,6 +388,7 @@
 				A2850FBE1F25549800E84152 /* DummyData.swift in Sources */,
 				A26707701F216CDB0017F859 /* Event.swift in Sources */,
 				A267076E1F215C520017F859 /* Riddle.swift in Sources */,
+				A234C3231F57942A00375D55 /* TeamTableViewCell.swift in Sources */,
 				A27B88161F2059FB00484C13 /* MyTeamViewController.swift in Sources */,
 				A27B88211F2130CA00484C13 /* User.swift in Sources */,
 				A27B88141F20593B00484C13 /* HomeViewController.swift in Sources */,

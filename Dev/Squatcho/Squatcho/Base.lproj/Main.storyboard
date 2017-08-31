@@ -532,29 +532,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRy-OW-kew">
-                                <rect key="frame" x="146" y="318" width="82" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRy-OW-kew">
+                                <rect key="frame" x="77" y="543" width="220" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QXB-uj-Sog"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="uuk-PA-CbD"/>
+                                </constraints>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="tappedLogOut" destination="23d-IN-Jbi" eventType="touchUpInside" id="bW0-Jv-imN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-mR-Oc0">
-                                <rect key="frame" x="82" y="190" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email_address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-g9-zfm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="3ga-1W-qQd"/>
+                                    <constraint firstAttribute="height" constant="64" id="PIr-go-PRd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-mR-Oc0">
+                                <rect key="frame" x="126" y="136" width="123" height="30"/>
                                 <state key="normal" title="Change Password"/>
                                 <connections>
                                     <action selector="tappedChangePassword:" destination="23d-IN-Jbi" eventType="touchUpInside" id="mLU-UN-0GC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-W9-ToO">
-                                <rect key="frame" x="164" y="403" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-W9-ToO">
+                                <rect key="frame" x="149" y="174" width="77" height="30"/>
                                 <state key="normal" title="Contact Us"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jgX-g9-zfm" firstAttribute="centerX" secondItem="fOO-e0-MkF" secondAttribute="centerX" id="1LG-4c-J2V"/>
+                            <constraint firstItem="3jt-W9-ToO" firstAttribute="top" secondItem="0pS-mR-Oc0" secondAttribute="bottom" constant="8" id="2I7-no-bqc"/>
+                            <constraint firstItem="0pS-mR-Oc0" firstAttribute="top" secondItem="jgX-g9-zfm" secondAttribute="bottom" constant="8" id="6bn-Iw-Vaa"/>
+                            <constraint firstItem="0pS-mR-Oc0" firstAttribute="centerX" secondItem="fOO-e0-MkF" secondAttribute="centerX" id="Mba-fH-XnL"/>
+                            <constraint firstItem="yh8-wF-KEU" firstAttribute="top" secondItem="kRy-OW-kew" secondAttribute="bottom" constant="80" id="dKl-O0-Tey"/>
+                            <constraint firstItem="jgX-g9-zfm" firstAttribute="top" secondItem="v0v-QP-YGs" secondAttribute="bottom" id="hjb-7y-g4f"/>
+                            <constraint firstItem="kRy-OW-kew" firstAttribute="centerX" secondItem="fOO-e0-MkF" secondAttribute="centerX" id="wtt-gd-R4J"/>
+                            <constraint firstItem="3jt-W9-ToO" firstAttribute="centerX" secondItem="fOO-e0-MkF" secondAttribute="centerX" id="z7y-vd-PGJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="gOS-cz-wuv">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="59R-Ao-LoP">
@@ -563,6 +584,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="changePasswordButton" destination="0pS-mR-Oc0" id="yIh-dX-iMv"/>
+                        <outlet property="emailAddressLabel" destination="jgX-g9-zfm" id="5ez-Bm-fl9"/>
                         <outlet property="menuButton" destination="59R-Ao-LoP" id="iiP-02-WoU"/>
                     </connections>
                 </viewController>

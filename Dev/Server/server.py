@@ -20,7 +20,7 @@ teamModel = db.teamList
 
 # checks to find their team and returns team name, member ids
 def getTeam(userId):
-    teams = teamList.find()
+    teams = teamModel.find()
     for team in teams:
         if team['leaderId'] is userId: return dumps(team)
         for pendingIds in team['pendingIds']:
@@ -153,17 +153,25 @@ def availableUsers():
     response = userModel.find({'status':'null', 'status':'pending'})
     return dumps(response)
 
+# called by a leader to get the existing team members
+@app.route("/myTeam", methods=['POST'])
+def myTeam():
+    body = json.loads(request.data)
+    team = body['teamName']
+    myTeam = teamModel.find_one({'teamName':team})
+    return dumps(myTeam)
+
 # checks to see if they're in anyone's pending, userId is the id of the member
 @app.route("/checkPending", methods=['POST'])
 def checkPending():
     body = json.loads(request.data)
     uid = body['userId']
-    teams = teamList.find()
+    teams = teamModel.find()
     for team in teams:
         for pendingIds in team['pendingIds']:
             if uid in pendingIds:
                 return dumps(team)
-    return 'ERROR: No requests pending.'
+    return
 
 if __name__ == "__main__":
     app.run(host='', port=8082)

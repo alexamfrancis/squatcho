@@ -15,6 +15,8 @@ public struct Constants {
     static let kDuringEventViewIdentifier = "DuringEventViewController"
     static let loginVCIdentifier = "LoginViewController"
     static let detailCellId = "DetailsTableViewCell"
+    static let kTeamTableViewCellId = "TeamTableViewCell"
+    static let kCellXibId = "teamCell"
     static let homeViewControllerIdentifier = "HomeViewController"
     static let detailsViewControllerIdentifier = "DetailVC"
     static let kMyTeamViewControllerIdentifier = "MyTeamViewController"
@@ -45,6 +47,7 @@ public struct Constants {
     static let acceptURL: String = "http://\(Constants.kServerURL):8082/accept"
     static let removeURL: String = "http://\(Constants.kServerURL):8082/remove"
     static let availableUsersURL: String = "http://\(Constants.kServerURL):8082/availableUsers"
+    static let myTeamURL: String = "http://\(Constants.kServerURL):8082/myTeam"
     static let checkPendingURL: String = "http://\(Constants.kServerURL):8082/checkPending"
 
     
